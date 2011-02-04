@@ -91,8 +91,14 @@ namespace Monoflector.Languages
         /// <param name="method">The method.</param>
         void ILanguageWriter.Write(Mono.Cecil.MethodDefinition method)
         {
-            LanguageWriter.Write(method);
-
+            try
+            {
+                LanguageWriter.Write(method);
+            }
+            catch
+            {
+                return;
+            }
             if (_formatter != null)
             {
                 _formatter.CompleteDecompile(method, this);

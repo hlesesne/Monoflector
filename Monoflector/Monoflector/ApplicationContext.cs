@@ -27,6 +27,15 @@ namespace Monoflector
             private set;
         }
 
+        [Export("Selected", typeof(ILanguageProvider))]
+        public ILanguageProvider SelectedLanguage
+        {
+            get
+            {
+                return Languages.First();
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationContext"/> class.
         /// </summary>

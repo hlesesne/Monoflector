@@ -71,6 +71,7 @@
             this.newSetToolStripMenuItem.Name = "newSetToolStripMenuItem";
             this.newSetToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.newSetToolStripMenuItem.Text = "&New Set...";
+            this.newSetToolStripMenuItem.Click += new System.EventHandler(this.newSetToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -129,6 +130,7 @@
             this._nodesTreeView.Size = new System.Drawing.Size(234, 433);
             this._nodesTreeView.TabIndex = 0;
             this._nodesTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this._nodesTreeView_BeforeExpand);
+            this._nodesTreeView.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this._nodesTreeView_NodeMouseDoubleClick);
             // 
             // _setsTabControl
             // 

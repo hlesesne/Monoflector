@@ -15,6 +15,7 @@ namespace Monoflector
     {
         public event EventHandler CloseRequested;
         private AssemblySet _set;
+        private Color _defaultColor;
 
         private IAssemblyProvider _provider;
         public AssemblyProviderSelection()
@@ -76,8 +77,10 @@ namespace Monoflector
             }
 
             var lvi = new ListViewItem(new string[] { null, e.Value.Name, e.Value.Version.ToString() });
+            lvi.Text = e.Value.Name.ToLowerInvariant();
             lvi.Tag = e.Value;
             lvi.ImageIndex = _set.Contains(e.Value) ? 0 : -1;
+            _defaultColor = lvi.BackColor;
 
             _assembliesListView.Items.Add(lvi);
         }
@@ -98,7 +101,7 @@ namespace Monoflector
                 else
                 {
                     _set.Add(asm);
-                    item.ImageIndex = 1;
+                    item.ImageIndex = 0;
                 }
             }
         }
@@ -150,6 +153,41 @@ namespace Monoflector
                 _provider.AssemblyDiscovered -= provider_AssemblyDiscovered;
             }
             base.OnParentChanged(e);
+        }
+
+        private void _filterTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _searchTimer.Stop();
+            _searchTimer.Start();
+        }
+
+        private void _searchTimer_Tick(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(_filterTextBox.Text))
+            {
+                var searchTerm = _filterTextBox.Text.ToLowerInvariant();
+                foreach (ListViewItem item in _assembliesListView.Items)
+                {
+                    var match = item.Text.Contains(searchTerm);
+                    if (match)
+                    {
+                        item.EnsureVisible();
+                    }
+
+                    if (match && !item.Selected)
+                    {
+                        item.BackColor = SystemColors.HotTrack;
+                        item.ForeColor = SystemColors.HighlightText;
+                    }
+                    else if (!match && item.Selected)
+                    {
+                        item.BackColor = SystemColors.Window;
+                        item.ForeColor = SystemColors.WindowText;
+                    }
+                }
+            }
+            _searchTimer.Stop();
+            _assembliesListView.Invalidate();
         }
     }
 }

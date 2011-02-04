@@ -14,9 +14,17 @@ namespace Monoflector.Interface
     public interface IAstPresenter
     {
         /// <summary>
+        /// Gets the name of the presenter.
+        /// </summary>
+        string DisplayName
+        {
+            get;
+        }
+
+        /// <summary>
         /// Presents the specified node.
         /// </summary>
         /// <param name="node">The node.</param>
-        void Present(ICodeNode node);
+        void Present(Languages.DecompilationTarget node);
     }
 }

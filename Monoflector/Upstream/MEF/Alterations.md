@@ -8,12 +8,12 @@ ExportAttribute
 
 1. Limitation with PartMetadataAttribute: the attribute is sealed. This prevents Environment-aware composition. Also, discovery of type metadata (lists) is broken - as it doesn't support lists.
 
-    ComponentModel\System\ComponentModel\Composition\PartMetadataAttribute.cs
+    :: ComponentModel\System\ComponentModel\Composition\PartMetadataAttribute.cs
 
     // Line 14
     public class PartMetadataAttribute : Attribute
 
-    ComponentModel\System\ComponentModel\Composition\Hosting\CompositionServices.cs
+    :: ComponentModel\System\ComponentModel\Composition\Hosting\CompositionServices.cs
 
     // Line 122
         internal static IDictionary<string, object> GetPartMetadataForType(this Type type, CreationPolicy creationPolicy)

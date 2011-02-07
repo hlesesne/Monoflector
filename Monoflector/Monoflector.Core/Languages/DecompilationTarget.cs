@@ -125,7 +125,7 @@ namespace Monoflector.Languages
 
             LanguageWriter = _languageWriterCreator(formatter);
             if (LanguageWriter == null)
-                throw new ArgumentOutOfRangeException("languageWriterCreator", "languageWriterCreator returned a null value.");
+                throw new ArgumentOutOfRangeException("languageWriterCreator", Monoflector.Properties.Resources.LanguageWriterCreator_NullValue);
         }
     }
 }

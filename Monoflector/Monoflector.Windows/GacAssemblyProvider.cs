@@ -23,7 +23,7 @@ namespace Monoflector.Windows
         {
             get
             {
-                return "GAC";
+                return Monoflector.Windows.Properties.Resources.GAC;
             }
         }
 
@@ -68,7 +68,7 @@ namespace Monoflector.Windows
         {
             var gac = assembly as GacAssembly;
             if (gac == null)
-                throw new ArgumentOutOfRangeException("assembly", "Assembly must be a GacAssembly.");
+                throw new ArgumentOutOfRangeException("assembly", Properties.Resources.IncorrectAssemblyType);
             return GlobalAssemblyResolver.Instance.Resolve(gac.AssemblyName.FullName);
         }
 
@@ -99,11 +99,14 @@ namespace Monoflector.Windows
 
         private AssemblyName GetAssemblyName(IAssemblyName nameRef)
         {
-            AssemblyName name = new AssemblyName();
-            name.Name = AssemblyCache.GetName(nameRef);
-            name.Version = AssemblyCache.GetVersion(nameRef);
-            name.CultureInfo = AssemblyCache.GetCulture(nameRef);
-            name.SetPublicKeyToken(AssemblyCache.GetPublicKeyToken(nameRef));
+            //AssemblyName name = new AssemblyName();
+            //name.Name = AssemblyCache.GetName(nameRef);
+            //name.Version = AssemblyCache.GetVersion(nameRef);
+            //name.CultureInfo = AssemblyCache.GetCulture(nameRef);
+            //name.SetPublicKeyToken(AssemblyCache.GetPublicKeyToken(nameRef));
+            var name = new AssemblyName(AssemblyCache.GetDisplayName(nameRef,
+                ASM_DISPLAY_FLAGS.CULTURE | ASM_DISPLAY_FLAGS.CUSTOM | ASM_DISPLAY_FLAGS.LANGUAGEID | ASM_DISPLAY_FLAGS.PROCESSORARCHITECTURE
+                | ASM_DISPLAY_FLAGS.PUBLIC_KEY | ASM_DISPLAY_FLAGS.PUBLIC_KEY_TOKEN | ASM_DISPLAY_FLAGS.VERSION));
             return name;
         }
 

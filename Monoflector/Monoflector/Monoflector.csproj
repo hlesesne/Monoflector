@@ -5,14 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{196D787A-2B67-4F23-AB3E-8F8FC9248CA6}</ProjectGuid>
+    <ProjectGuid>{4EB44D14-577C-41B7-8A23-FC9FB2261A1D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Monoflector</RootNamespace>
-    <AssemblyName>Monoflector</AssemblyName>
+    <RootNamespace>Monoflector.Runtime</RootNamespace>
+    <AssemblyName>Monoflector.Runtime</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -35,79 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cecil.Decompiler, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Upstream\Cecil.Decompiler.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil, Version=0.9.4.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\Upstream\Mono.Cecil.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition.Monoflector">
       <HintPath>..\Upstream\MEF\System.ComponentModel.Composition.Monoflector.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationContext.cs" />
-    <Compile Include="AssemblyProviderSelection.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AssemblyProviderSelection.Designer.cs">
-      <DependentUpon>AssemblyProviderSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AssemblySelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssemblySelector.Designer.cs">
-      <DependentUpon>AssemblySelector.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AssemblySet.cs" />
-    <Compile Include="AssemblySetBrowser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AssemblySetBrowser.Designer.cs">
-      <DependentUpon>AssemblySetBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AssemblySetNameForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssemblySetNameForm.Designer.cs">
-      <DependentUpon>AssemblySetNameForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WatermarkBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <EmbeddedResource Include="AssemblyProviderSelection.resx">
-      <DependentUpon>AssemblyProviderSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AssemblySelector.resx">
-      <DependentUpon>AssemblySelector.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AssemblySetBrowser.resx">
-      <DependentUpon>AssemblySetBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AssemblySetNameForm.resx">
-      <DependentUpon>AssemblySetNameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,7 +55,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,24 +71,6 @@
       <Project>{FE4027F5-B6C5-4045-B9B0-3ECED7CCBFAC}</Project>
       <Name>Monoflector.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wrench.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brick_edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\find.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\package_add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\accept.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

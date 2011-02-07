@@ -47,6 +47,7 @@ namespace Monoflector
             var area = _assembliesListView.ClientSize.Width;
             area -= _iconHeader.Width;
             area -= _versionHeader.Width;
+            area -= _architectureHeader.Width;
             _nameColumn.Width = area;
         }
 
@@ -76,7 +77,7 @@ namespace Monoflector
                 return;
             }
 
-            var lvi = new ListViewItem(new string[] { null, e.Value.Name, e.Value.Version.ToString() });
+            var lvi = new ListViewItem(new string[] { null, e.Value.Name, e.Value.Version.ToString(), e.Value.ProcessorArchitecture.ToLocalString() });
             lvi.Text = e.Value.Name.ToLowerInvariant();
             lvi.Tag = e.Value;
             lvi.ImageIndex = _set.Contains(e.Value) ? 0 : -1;
@@ -104,9 +105,16 @@ namespace Monoflector
                     item.ImageIndex = 0;
                 }
             }
+            UpdateButtons();
+            _assembliesListView.Invalidate();
         }
 
         private void _assembliesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateButtons();
+        }
+
+        private void UpdateButtons()
         {
             if (_assembliesListView.SelectedItems.Count == 0)
             {
@@ -138,9 +146,15 @@ namespace Monoflector
             {
                 _addButton.Enabled = true;
                 if (add)
+                {
                     _addButton.Text = "&Add";
+                    _addButton.Image = Properties.Resources.add;
+                }
                 else
+                {
                     _addButton.Text = "&Remove";
+                    _addButton.Image = Properties.Resources.delete;
+                }
             }
         } 
         #endregion

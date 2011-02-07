@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Mono.Cecil;
+using System.Reflection;
 
 namespace Monoflector
 {
@@ -31,6 +32,14 @@ namespace Monoflector
         /// Gets the origin.
         /// </summary>
         IAssemblyProvider Origin
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Gets the processor architecture.
+        /// </summary>
+        ProcessorArchitecture ProcessorArchitecture
         {
             get;
         }

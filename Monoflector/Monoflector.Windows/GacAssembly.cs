@@ -46,6 +46,17 @@ namespace Monoflector.Windows
         }
 
         /// <summary>
+        /// Gets the cpu architecture.
+        /// </summary>
+        public override ProcessorArchitecture ProcessorArchitecture
+        {
+            get
+            {
+                return AssemblyName.ProcessorArchitecture;
+            }
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="GacAssembly"/> class.
         /// </summary>
         public GacAssembly(GacAssemblyProvider origin, AssemblyName assemblyName)

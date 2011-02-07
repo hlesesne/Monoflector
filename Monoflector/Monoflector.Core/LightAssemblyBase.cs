@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace Monoflector
 {
@@ -33,6 +34,14 @@ namespace Monoflector
         {
             get;
             private set;
+        }
+
+        /// <summary>
+        /// Gets the cpu architecture.
+        /// </summary>
+        public abstract ProcessorArchitecture ProcessorArchitecture
+        {
+            get;
         }
 
         /// <summary>

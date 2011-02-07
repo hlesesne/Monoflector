@@ -1,44 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition;
+using System.Configuration;
+using System.Threading;
+using System.Text;
 
-namespace Monoflector
+namespace Monoflector.Runtime
 {
     static class Program
     {
+        static string[] Environments;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            // CompositionContainer will automatically dispose children.
-            using (CreateContainer())
-            using (var frm = new MainForm())
+            var threadType = ApartmentState.MTA;
+            var cfgThread = ConfigurationManager.AppSettings["ThreadRequirement"];
+            if (!string.IsNullOrEmpty(cfgThread))
             {
-                ApplicationContext.Instance.Initialize();
-                Application.Run(frm);
+                Enum.TryParse<ApartmentState>(cfgThread, out threadType);
+            }
+
+            var thread = new Thread(MainWorker);
+            thread.SetApartmentState(threadType);
+            thread.Start(args);
+            thread.CurrentCulture = thread.CurrentUICulture = Thread.CurrentThread.CurrentUICulture;
+            thread.Join();
+        }
+
+        static void MainWorker(object argsObject)
+        {
+            using (CreateContainer())
+            {
+                var runtime = CompositionServices.CompositionContainer.GetExportedValues<IMonoflectorHost>().FirstOrDefault();
+                if (runtime == null)
+                    throw new Exception(string.Format(Monoflector.Runtime.Properties.Resources.NoEnvironment, string.Join(", ", Environments)));
+                runtime.Run((string[])argsObject);
             }
         }
 
-        /// <summary>
-        /// Creates the composition container.
-        /// </summary>
-        /// <returns>The composition container.</returns>
-        private static CompositionContainer CreateContainer()
+        static CompositionContainer CreateContainer()
         {
+            Environments = WhitespaceSplit(ConfigurationManager.AppSettings["Environments"]).ToArray();
+
             var cat1 = new DirectoryCatalog(".\\plugins");
             var cat2 = new AssemblyCatalog(typeof(Program).Assembly);
-            var cat = new AggregateCatalog(cat1, cat2);
-            var ecat = new EnvironmentCatalog(cat, "Windows", "WindowsForms");
+            var cat3 = new AssemblyCatalog(typeof(CompositionServices).Assembly);
+            var cat = new AggregateCatalog(cat1, cat2, cat3);
+            var ecat = new EnvironmentCatalog(cat, Environments);
             var cont = new CompositionContainer(ecat);
             CompositionServices.Initialize(cont);
             return cont;
+        }
+
+        static IEnumerable<string> WhitespaceSplit(string source) // In accordance with XML multi-values.
+        {
+            if (string.IsNullOrEmpty(source))
+                yield break;
+            var current = new StringBuilder(source.Length);
+            foreach (var c in source)
+            {
+                if (char.IsWhiteSpace(c))
+                {
+                    if (current.Length > 0)
+                    {
+                        yield return current.ToString();
+                        current.Clear();
+                    }
+                }
+                else
+                {
+                    current.Append(c);
+                }
+            }
+
+            if (current.Length > 0)
+            {
+                yield return current.ToString();
+            }
         }
     }
 }

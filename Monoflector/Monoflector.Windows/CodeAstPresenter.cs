@@ -17,7 +17,7 @@ namespace Monoflector.Windows
     {
         public string DisplayName
         {
-            get { return "Code"; }
+            get { return Properties.Resources.CodeAstPresenterDisplayName; }
         }
 
         public CodeAstPresenter()

@@ -36,6 +36,10 @@ namespace Monoflector
             {
                 dif = x.Version.CompareTo(y.Version);
             }
+            if (dif == 0)
+            {
+                dif = x.ProcessorArchitecture.CompareTo(y.ProcessorArchitecture);
+            }
 
             return dif;
         }
@@ -70,6 +74,7 @@ namespace Monoflector
                 hc = obj.Name.GetHashCode();
             if (obj.Version != null)
                 hc ^= obj.Version.GetHashCode();
+            hc ^= (int)obj.ProcessorArchitecture;
             return hc;
         }
     }

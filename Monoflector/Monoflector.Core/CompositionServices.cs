@@ -47,7 +47,7 @@ namespace Monoflector
             if (compositionContainer == null)
                 throw new ArgumentNullException("compositionContainer");
             if (IsInitialized)
-                throw new InvalidOperationException("CompositionServices is already initialized.");
+                throw new InvalidOperationException(Properties.Resources.CompositionServices_Initialized);
 
             _compositionContainer = compositionContainer;
             IsInitialized = true;
@@ -70,7 +70,7 @@ namespace Monoflector
         private static void CheckInitialized()
         {
             if (!IsInitialized)
-                throw new InvalidOperationException("CompositionServices has not been initialized.");
+                throw new InvalidOperationException(Properties.Resources.CompositionServices_NotInitialized);
         }
     }
 }

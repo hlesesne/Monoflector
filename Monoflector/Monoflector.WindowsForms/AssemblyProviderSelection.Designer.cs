@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssemblyProviderSelection));
             this._buttonsPanel = new System.Windows.Forms.Panel();
-            this._filterTextBox = new Monoflector.WatermarkBox();
             this._closeButton = new System.Windows.Forms.Button();
             this._addButton = new System.Windows.Forms.Button();
             this._mainImageList = new System.Windows.Forms.ImageList(this.components);
@@ -39,7 +38,9 @@
             this._nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._versionHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._assembliesListView = new System.Windows.Forms.ListView();
+            this._architectureHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._searchTimer = new System.Windows.Forms.Timer(this.components);
+            this._filterTextBox = new Monoflector.WatermarkBox();
             this._buttonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,15 +54,6 @@
             this._buttonsPanel.Name = "_buttonsPanel";
             this._buttonsPanel.Size = new System.Drawing.Size(503, 28);
             this._buttonsPanel.TabIndex = 0;
-            // 
-            // _filterTextBox
-            // 
-            this._filterTextBox.Location = new System.Drawing.Point(3, 4);
-            this._filterTextBox.Name = "_filterTextBox";
-            this._filterTextBox.Size = new System.Drawing.Size(335, 20);
-            this._filterTextBox.TabIndex = 4;
-            this._filterTextBox.Watermark = "Search";
-            this._filterTextBox.TextChanged += new System.EventHandler(this._filterTextBox_TextChanged);
             // 
             // _closeButton
             // 
@@ -78,9 +70,11 @@
             // 
             this._addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._addButton.Enabled = false;
-            this._addButton.Location = new System.Drawing.Point(344, 3);
+            this._addButton.Image = global::Monoflector.Properties.Resources.add;
+            this._addButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._addButton.Location = new System.Drawing.Point(310, 3);
             this._addButton.Name = "_addButton";
-            this._addButton.Size = new System.Drawing.Size(75, 23);
+            this._addButton.Size = new System.Drawing.Size(109, 23);
             this._addButton.TabIndex = 2;
             this._addButton.Text = "Add";
             this._addButton.UseVisualStyleBackColor = true;
@@ -100,7 +94,7 @@
             // _nameColumn
             // 
             this._nameColumn.Text = "Name";
-            this._nameColumn.Width = 370;
+            this._nameColumn.Width = 270;
             // 
             // _versionHeader
             // 
@@ -112,7 +106,8 @@
             this._assembliesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this._iconHeader,
             this._nameColumn,
-            this._versionHeader});
+            this._versionHeader,
+            this._architectureHeader});
             this._assembliesListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._assembliesListView.FullRowSelect = true;
             this._assembliesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -125,10 +120,24 @@
             this._assembliesListView.View = System.Windows.Forms.View.Details;
             this._assembliesListView.SelectedIndexChanged += new System.EventHandler(this._assembliesListView_SelectedIndexChanged);
             // 
+            // _architectureHeader
+            // 
+            this._architectureHeader.Text = "Architecture";
+            this._architectureHeader.Width = 100;
+            // 
             // _searchTimer
             // 
             this._searchTimer.Interval = 1000;
             this._searchTimer.Tick += new System.EventHandler(this._searchTimer_Tick);
+            // 
+            // _filterTextBox
+            // 
+            this._filterTextBox.Location = new System.Drawing.Point(3, 4);
+            this._filterTextBox.Name = "_filterTextBox";
+            this._filterTextBox.Size = new System.Drawing.Size(301, 20);
+            this._filterTextBox.TabIndex = 4;
+            this._filterTextBox.Watermark = "Search";
+            this._filterTextBox.TextChanged += new System.EventHandler(this._filterTextBox_TextChanged);
             // 
             // AssemblyProviderSelection
             // 
@@ -156,6 +165,7 @@
         private System.Windows.Forms.ListView _assembliesListView;
         private System.Windows.Forms.Timer _searchTimer;
         private WatermarkBox _filterTextBox;
+        private System.Windows.Forms.ColumnHeader _architectureHeader;
 
 
     }

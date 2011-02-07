@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,13 +112,36 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NoEnvironment" xml:space="preserve">
-    <value>No suitable hosts could be found for environments {0}.</value>
-    <comment>NoEnvironment description</comment>
+  <data name="CompositionServices_Initialized" xml:space="preserve">
+    <value>CompositionServices is already initialized.</value>
+    <comment>CompositionServices_Initialized description</comment>
+  </data>
+  <data name="CompositionServices_NotInitialized" xml:space="preserve">
+    <value>Composition Services has not been initialized.</value>
+    <comment>CompositionServices_NotInitialized description</comment>
+  </data>
+  <data name="ProcessorArchitecture_Amd64" xml:space="preserve">
+    <value>x64</value>
+  </data>
+  <data name="ProcessorArchitecture_IA64" xml:space="preserve">
+    <value>Itanium</value>
+  </data>
+  <data name="ProcessorArchitecture_MSIL" xml:space="preserve">
+    <value>Any CPU</value>
+  </data>
+  <data name="ProcessorArchitecture_None" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="ProcessorArchitecture_X86" xml:space="preserve">
+    <value>x86</value>
+  </data>
+  <data name="LanguageWriterCreator_NullValue" xml:space="preserve">
+    <value>languageWriterCreator returned a null value.</value>
+    <comment>LanguageWriterCreator_NullValue description</comment>
   </data>
 </root>

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cecil.Decompiler.Languages;
+using System.ComponentModel.Composition;
 
 namespace Monoflector.Languages
 {
     /// <summary>
     /// Represents the default implementation of <see cref="LanguageProvider"/>.
     /// </summary>
+    [PartNotDiscoverable] // Prevent discovery of this specific part.
     public class LanguageProviderBase : ILanguageProvider
     {
         /// <summary>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Monoflector.Runtime")]
+[assembly: AssemblyTitle("Monoflector")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Monoflector.Runtime")]
+[assembly: AssemblyProduct("Monoflector")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("10641c4b-8729-42ba-8c56-1e397f124f3d")]
+[assembly: Guid("0ea163cc-0f70-4d3d-90a1-9b675e700943")]
 
 // Version information for an assembly consists of the following four values:
 //

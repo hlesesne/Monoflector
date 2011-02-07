@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Monoflector.Runtime.Properties {
+namespace Monoflector.Windows.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Monoflector.Runtime.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Monoflector.Runtime.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Monoflector.Windows.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,29 @@ namespace Monoflector.Runtime.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No suitable hosts could be found for environments {0}..
+        ///   Looks up a localized string similar to Code.
         /// </summary>
-        internal static string NoEnvironment {
+        internal static string CodeAstPresenterDisplayName {
             get {
-                return ResourceManager.GetString("NoEnvironment", resourceCulture);
+                return ResourceManager.GetString("CodeAstPresenterDisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GAC.
+        /// </summary>
+        internal static string GAC {
+            get {
+                return ResourceManager.GetString("GAC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assembly must be a GacAssembly..
+        /// </summary>
+        internal static string IncorrectAssemblyType {
+            get {
+                return ResourceManager.GetString("IncorrectAssemblyType", resourceCulture);
             }
         }
     }

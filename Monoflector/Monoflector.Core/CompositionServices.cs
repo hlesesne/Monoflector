@@ -46,8 +46,6 @@ namespace Monoflector
         {
             if (compositionContainer == null)
                 throw new ArgumentNullException("compositionContainer");
-            if (IsInitialized)
-                throw new InvalidOperationException(Properties.Resources.CompositionServices_Initialized);
 
             _compositionContainer = compositionContainer;
             IsInitialized = true;

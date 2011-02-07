@@ -6,12 +6,18 @@ using System.ComponentModel.Composition;
 using System.Configuration;
 using System.Threading;
 using System.Text;
+using System.IO;
+using Monoflector.Interface;
+using Monoflector.PluginPackaging;
+using Monoflector.PluginPackaging;
 
 namespace Monoflector.Runtime
 {
     static class Program
     {
-        static string[] Environments;
+        private static IEnumerable<IMonoflectorBootstrapper> _bootstrapper;
+        private static IPluginInstallation _installer;
+        private static PluginPackage _package;
 
         /// <summary>
         /// The main entry point for the application.
@@ -34,54 +40,107 @@ namespace Monoflector.Runtime
 
         static void MainWorker(object argsObject)
         {
-            using (CreateContainer())
+            var args = (string[])argsObject;
+            PluginPackage pluginInstall = null;
+
+            if (args.Length == 1)
+            {
+                var fn = args[0];
+                if (Path.GetExtension(fn) == ".mfplug")
+                {
+                    pluginInstall = PluginPackage.Load(fn);
+                }
+            }
+            
+            // First try and create a runtime.
+            if (pluginInstall == null)
+            {
+                using (Extensibility.InitializeRuntimeComposition())
+                {
+                    var runtime = CompositionServices.CompositionContainer.GetExportedValues<IMonoflectorHost>().FirstOrDefault();
+                    if (runtime != null)
+                    {
+                        runtime.Run((string[])argsObject);
+                        return;
+                    }
+                }
+            }
+
+            // If that fails it means nothing has been set up.
+            // Attempt to bootstrap.
+            using (Extensibility.InitializeBootstrapComposition())
+            {
+                _installer = CompositionServices.CompositionContainer.GetExportedValues<IPluginInstallation>().FirstOrDefault();
+                if (_installer == null)
+                    throw new Exception(string.Format(Properties.Resources.NoEnvironment, string.Join(", ", Extensibility.Environments)));
+
+                if (pluginInstall == null) // Boostrap mode.
+                {
+                    if (_installer.ShowBootstrapInterface())
+                    {
+                        _installer.ShowInterface();
+                        _bootstrapper = CompositionServices.CompositionContainer.GetExportedValues<IMonoflectorBootstrapper>();
+
+                        var worker = new Thread(BootstrapWorker);
+                        worker.Start();
+                        _installer.WaitForClose();
+                    }
+                }
+                else // Plugin mode.
+                {
+                    if (_installer.ShowConfirmation(_package = pluginInstall))
+                    {
+                        _installer.ShowInterface();
+
+                        var worker = new Thread(InstallerWorker);
+                        worker.Start();
+                        _installer.WaitForClose();
+                    }
+                }
+            }
+
+            // Try again.
+            using (Extensibility.InitializeRuntimeComposition())
             {
                 var runtime = CompositionServices.CompositionContainer.GetExportedValues<IMonoflectorHost>().FirstOrDefault();
-                if (runtime == null)
-                    throw new Exception(string.Format(Monoflector.Runtime.Properties.Resources.NoEnvironment, string.Join(", ", Environments)));
-                runtime.Run((string[])argsObject);
-            }
-        }
-
-        static CompositionContainer CreateContainer()
-        {
-            Environments = WhitespaceSplit(ConfigurationManager.AppSettings["Environments"]).ToArray();
-
-            var cat1 = new DirectoryCatalog(".\\plugins");
-            var cat2 = new AssemblyCatalog(typeof(Program).Assembly);
-            var cat3 = new AssemblyCatalog(typeof(CompositionServices).Assembly);
-            var cat = new AggregateCatalog(cat1, cat2, cat3);
-            var ecat = new EnvironmentCatalog(cat, Environments);
-            var cont = new CompositionContainer(ecat);
-            CompositionServices.Initialize(cont);
-            return cont;
-        }
-
-        static IEnumerable<string> WhitespaceSplit(string source) // In accordance with XML multi-values.
-        {
-            if (string.IsNullOrEmpty(source))
-                yield break;
-            var current = new StringBuilder(source.Length);
-            foreach (var c in source)
-            {
-                if (char.IsWhiteSpace(c))
+                if (runtime != null)
                 {
-                    if (current.Length > 0)
-                    {
-                        yield return current.ToString();
-                        current.Clear();
-                    }
+                    runtime.Run((string[])argsObject);
                 }
                 else
                 {
-                    current.Append(c);
+                    throw new Exception(string.Format(Properties.Resources.NoEnvironment, string.Join(", ", Extensibility.Environments))); 
+                }
+            }
+        }
+
+        private static void BootstrapWorker()
+        {
+            foreach (var bs in _bootstrapper)
+            {
+                bs.Install();
+            }
+
+            _installer.ShowClose();
+        }
+
+        private static void InstallerWorker()
+        {
+            using (_package)
+            {
+                var manager = CompositionServices.CompositionContainer.GetExportedValues<IPluginManager>().FirstOrDefault();
+                for (var i = 0; i < _package.Installables.Length; i++)
+                {
+                    var progress = (i * 100) / _package.Installables.Length;
+                    var installable = _package.Installables[i];
+
+                    manager.Update(_package.Title, installable, progress);
+                    _package.Extract(installable, Paths.Plugins);
+                    Thread.Sleep(1000);
                 }
             }
 
-            if (current.Length > 0)
-            {
-                yield return current.ToString();
-            }
+            _installer.ShowClose();
         }
     }
 }

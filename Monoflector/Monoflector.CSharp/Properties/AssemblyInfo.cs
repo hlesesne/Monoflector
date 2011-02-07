@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Monoflector.CSharp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Monoflector CSharp Support")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Monoflector.CSharp")]

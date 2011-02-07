@@ -21,8 +21,7 @@ namespace Monoflector
         /// <param name="commandlineArguments">The command line arguments.</param>
         public void Run(string[] commandlineArguments)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            WindowsInitialization.Initialize();
 
             using (var frm = new MainForm())
             {

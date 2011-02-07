@@ -95,6 +95,24 @@ namespace Monoflector.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Installation Done.
+        /// </summary>
+        internal static string InstallationDone {
+            get {
+                return ResourceManager.GetString("InstallationDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installing: {0}.
+        /// </summary>
+        internal static string InstallingTitle {
+            get {
+                return ResourceManager.GetString("InstallingTitle", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap package_add {
             get {
                 object obj = ResourceManager.GetObject("package_add", resourceCulture);

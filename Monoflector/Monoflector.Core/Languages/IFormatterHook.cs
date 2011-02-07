@@ -11,6 +11,7 @@ namespace Monoflector.Languages
     /// <summary>
     /// Represents a formatter hook.
     /// </summary>
+    [InheritedExport(typeof(IFormatterHook))]
     public interface IFormatterHook : IFormatter
     {
         /// <summary>

@@ -13,6 +13,7 @@ namespace Monoflector.Windows
     /// <summary>
     /// Represents the GAC assembly provider.
     /// </summary>
+    [EnvironmentDependency("Windows")]
     public class GacAssemblyProvider : IAssemblyProvider
     {
         /// <summary>

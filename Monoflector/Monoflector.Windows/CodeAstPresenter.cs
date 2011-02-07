@@ -8,9 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using Monoflector.Interface;
 using Monoflector.Languages;
+using System.ComponentModel.Composition;
 
 namespace Monoflector.Windows
 {
+    [EnvironmentDependency("WindowsForms")]
     public partial class CodeAstPresenter : UserControl, IAstPresenter
     {
         public string DisplayName

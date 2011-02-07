@@ -35,7 +35,8 @@ namespace Monoflector
             var cat1 = new DirectoryCatalog(".\\plugins");
             var cat2 = new AssemblyCatalog(typeof(Program).Assembly);
             var cat = new AggregateCatalog(cat1, cat2);
-            var cont = new CompositionContainer(cat);
+            var ecat = new EnvironmentCatalog(cat, "Windows", "WindowsForms");
+            var cont = new CompositionContainer(ecat);
             CompositionServices.Initialize(cont);
             return cont;
         }

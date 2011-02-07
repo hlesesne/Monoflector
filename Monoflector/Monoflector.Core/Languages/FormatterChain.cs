@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cecil.Decompiler.Languages;
+using System.ComponentModel.Composition;
 
 namespace Monoflector.Languages
 {
     /// <summary>
     /// Represents a chain of <see cref="IFormatter">IFormatters</see>.
     /// </summary>
+    [PartNotDiscoverable] // Prevent discovery of this specific part.
     public sealed class FormatterChain : IFormatterHook
     {
         /// <summary>

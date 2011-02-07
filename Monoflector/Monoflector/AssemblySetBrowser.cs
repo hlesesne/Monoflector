@@ -33,7 +33,8 @@ namespace Monoflector
         }
 
         [ImportMany(typeof(IAstPresenter))]
-        private IEnumerable<IAstPresenter> _presenters;
+        private IEnumerable<ExportFactory<IAstPresenter>> _presenterFactories;
+        private IAstPresenter[] _presenters;
 
         public AssemblySetBrowser()
         {
@@ -66,6 +67,8 @@ namespace Monoflector
         /// </summary>
         public void OnImportsSatisfied()
         {
+            _presenters = _presenterFactories.Select(x => x.CreateExport().Value).ToArray();
+
             _presentersTabControl.TabPages.Clear();
             foreach (var presenter in _presenters)
             {

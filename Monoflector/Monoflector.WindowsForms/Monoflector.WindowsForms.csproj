@@ -88,6 +88,12 @@
       <DependentUpon>AssemblySetNameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Host.cs" />
+    <Compile Include="HtmlAstPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HtmlAstPresenter.Designer.cs">
+      <DependentUpon>HtmlAstPresenter.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AssemblySetNameForm.resx">
       <DependentUpon>AssemblySetNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlAstPresenter.resx">
+      <DependentUpon>HtmlAstPresenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -203,6 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shCore.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shCoreDefault.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

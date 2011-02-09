@@ -129,6 +129,20 @@ namespace Monoflector.Properties {
             }
         }
         
+        internal static byte[] shCore {
+            get {
+                object obj = ResourceManager.GetObject("shCore", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        internal static byte[] shCoreDefault {
+            get {
+                object obj = ResourceManager.GetObject("shCoreDefault", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);

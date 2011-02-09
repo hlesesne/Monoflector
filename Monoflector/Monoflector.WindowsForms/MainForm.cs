@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Mono.Cecil;
+using Cecil.Decompiler.Languages;
 
 namespace Monoflector
 {
@@ -226,7 +227,7 @@ namespace Monoflector
                     var target = ApplicationContext.Instance.SelectedLanguage.CreateDecompilationTarget();
                     try
                     {
-                        target.LanguageWriter.Write(def);
+                        ((ILanguageWriter)target).Write(def);
                     }
                     catch
                     {

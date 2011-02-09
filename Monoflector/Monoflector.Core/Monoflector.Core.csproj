@@ -63,6 +63,7 @@
     <Compile Include="IAssemblyProvider.cs" />
     <Compile Include="ILightAssembly.cs" />
     <Compile Include="Interface\IPluginInstallation.cs" />
+    <Compile Include="Languages\HtmlFormatterHook.cs" />
     <Compile Include="Languages\TextPlainFormatterHook.cs" />
     <Compile Include="LightAssemblyComparer.cs" />
     <Compile Include="Interface\IAstPresenter.cs" />

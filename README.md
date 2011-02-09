@@ -3,6 +3,10 @@ Monoflector
 
 Monoflector is an open source front-end for [Cecil Decompiler](https://github.com/mono/cecil/tree/master/decompiler). It allows you to reverse-engineer .Net assemblies into understandable code (e.g. C#). See the [Wiki](https://github.com/jcdickinson/Monoflector/wiki) for more information.
 
+Currently it is only being built for the MSFT CLR, but extensibility/supplant points exists for Mono.
+
+**Again, this isn't a Mono application, it's a Windows/MSFT CLR one.***
+
 License
 -------
 

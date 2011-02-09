@@ -5,7 +5,7 @@ Monoflector is an open source front-end for [Cecil Decompiler](https://github.co
 
 Currently it is only being built for the MSFT CLR, but extensibility/supplant points exists for Mono.
 
-**Again, this isn't a Mono application, it's a Windows/MSFT CLR one.***
+**Again, this isn't a Mono application, it's a Windows/MSFT CLR one.**
 
 License
 -------

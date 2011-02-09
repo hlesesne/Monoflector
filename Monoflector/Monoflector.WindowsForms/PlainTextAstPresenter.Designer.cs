@@ -1,6 +1,6 @@
-﻿namespace Monoflector.Windows
+﻿namespace Monoflector
 {
-    partial class CodeAstPresenter
+    partial class PlainTextAstPresenter
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,14 +37,16 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(150, 150);
             this.textBox1.TabIndex = 0;
             // 
-            // CodeAstPresenter
+            // PlainTextAstPresenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBox1);
+            this.Name = "PlainTextAstPresenter";
             this.ResumeLayout(false);
             this.PerformLayout();
 

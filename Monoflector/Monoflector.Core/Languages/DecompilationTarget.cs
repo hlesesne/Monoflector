@@ -32,7 +32,6 @@ namespace Monoflector.Languages
 
         private StringWriter _stringWriter;
         private Func<IFormatter, ILanguageWriter> _languageWriterCreator;
-        private IFormatterHook _formatter;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DecompilationTarget"/> class.
@@ -65,9 +64,9 @@ namespace Monoflector.Languages
         {
             LanguageWriter.Write(expression);
 
-            if (_formatter != null)
+            if (_chain != null)
             {
-                _formatter.CompleteDecompile(expression, this);
+                _chain.CompleteDecompile(expression, this);
             }
         }
 
@@ -79,9 +78,9 @@ namespace Monoflector.Languages
         {
             LanguageWriter.Write(statement);
 
-            if (_formatter != null)
+            if (_chain != null)
             {
-                _formatter.CompleteDecompile(statement, this);
+                _chain.CompleteDecompile(statement, this);
             }
         }
 
@@ -99,9 +98,9 @@ namespace Monoflector.Languages
             {
                 return;
             }
-            if (_formatter != null)
+            if (_chain != null)
             {
-                _formatter.CompleteDecompile(method, this);
+                _chain.CompleteDecompile(method, this);
             }
         } 
         #endregion
@@ -111,21 +110,25 @@ namespace Monoflector.Languages
         /// </summary>
         public void OnImportsSatisfied()
         {
-            _formatter = null;
             _stringWriter = new StringWriter();
-            IFormatter formatter = new PlainTextFormatter(_stringWriter);
-            
-            // Get the hooks.
-            if (_hooks != null)
-            {
-                var chain = new FormatterChain(_hooks);
-                chain.Prepend(formatter);
-                formatter = _formatter = chain;
-            }
 
-            LanguageWriter = _languageWriterCreator(formatter);
+            _chain = new FormatterChain(_hooks);
+
+            LanguageWriter = _languageWriterCreator(_chain);
             if (LanguageWriter == null)
                 throw new ArgumentOutOfRangeException("languageWriterCreator", Monoflector.Properties.Resources.LanguageWriterCreator_NullValue);
+        }
+
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// </summary>
+        /// <param name="contentType">The desired MIME content-type.</param>
+        /// <returns>
+        /// A <see cref="System.String"/> that represents this instance.
+        /// </returns>
+        public string ToString(string contentType)
+        {
+            return _chain.ToString(contentType);
         }
     }
 }

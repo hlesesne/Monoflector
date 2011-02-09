@@ -150,4 +150,7 @@
     <value>Installation Done</value>
     <comment>e</comment>
   </data>
+  <data name="PlainTextAstPresenter" xml:space="preserve">
+    <value>Code (Plain)</value>
+  </data>
 </root>

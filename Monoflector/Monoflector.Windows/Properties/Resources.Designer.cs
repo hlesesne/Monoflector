@@ -61,15 +61,6 @@ namespace Monoflector.Windows.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code.
-        /// </summary>
-        internal static string CodeAstPresenterDisplayName {
-            get {
-                return ResourceManager.GetString("CodeAstPresenterDisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to GAC.
         /// </summary>
         internal static string GAC {

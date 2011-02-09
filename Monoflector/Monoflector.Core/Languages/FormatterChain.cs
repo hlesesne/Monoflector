@@ -10,8 +10,7 @@ namespace Monoflector.Languages
     /// <summary>
     /// Represents a chain of <see cref="IFormatter">IFormatters</see>.
     /// </summary>
-    [PartNotDiscoverable] // Prevent discovery of this specific part.
-    public sealed class FormatterChain : IFormatterHook
+    public sealed class FormatterChain : IFormatter
     {
         /// <summary>
         /// Gets the name of the hook.
@@ -21,9 +20,9 @@ namespace Monoflector.Languages
             get { return "Chain"; }
         }
 
-        private static readonly LinkedList<IFormatter> _empty = new LinkedList<IFormatter>();
+        private static readonly Dictionary<string, IFormatter> _empty = new Dictionary<string, IFormatter>();
 
-        private LinkedList<IFormatter> _formatters;
+        private Dictionary<string, IFormatter> _formatters;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FormatterChain"/> class.
@@ -34,25 +33,11 @@ namespace Monoflector.Languages
             if (formatters == null)
                 _formatters = _empty;
             else
-                _formatters = new LinkedList<IFormatter>(formatters);
-        }
-
-        /// <summary>
-        /// Prepends the specified formatter.
-        /// </summary>
-        /// <param name="formatter">The formatter.</param>
-        public void Prepend(IFormatter formatter)
-        {
-            _formatters.AddFirst(formatter);
-        }
-
-        /// <summary>
-        /// Appends the specified formatter.
-        /// </summary>
-        /// <param name="formatter">The formatter.</param>
-        public void Append(IFormatter formatter)
-        {
-            _formatters.AddLast(formatter);
+            {
+                _formatters = new Dictionary<string, IFormatter>(StringComparer.OrdinalIgnoreCase);
+                foreach (var formatter in formatters)
+                    _formatters.Add(formatter.Name, formatter);
+            }
         }
 
         /// <summary>
@@ -62,11 +47,11 @@ namespace Monoflector.Languages
         /// <param name="target">The decompilation target.</param>
         public void CompleteDecompile(object item, DecompilationTarget target)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
             {
                 if (hook is IFormatterHook)
                 {
-                    ((IFormatterHook)hook).CompleteDecompile(item, target);
+                    ((IFormatterHook)hook).CompleteDecompile(item, target, this);
                 }
             }
         }
@@ -76,7 +61,7 @@ namespace Monoflector.Languages
         /// </summary>
         public void Indent()
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.Indent();
         }
 
@@ -85,7 +70,7 @@ namespace Monoflector.Languages
         /// </summary>
         public void Outdent()
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.Outdent();
         }
 
@@ -95,7 +80,7 @@ namespace Monoflector.Languages
         /// <param name="str">The string.</param>
         public void Write(string str)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.Write(str);
         }
 
@@ -105,7 +90,7 @@ namespace Monoflector.Languages
         /// <param name="comment">The specified comment.</param>
         public void WriteComment(string comment)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteComment(comment);
         }
 
@@ -116,7 +101,7 @@ namespace Monoflector.Languages
         /// <param name="definition">The definition.</param>
         public void WriteDefinition(string value, object definition)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteDefinition(value, definition);
         }
 
@@ -127,7 +112,7 @@ namespace Monoflector.Languages
         /// <param name="identifier">The identifier.</param>
         public void WriteIdentifier(string value, object identifier)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteDefinition(value, identifier);
         }
 
@@ -137,7 +122,7 @@ namespace Monoflector.Languages
         /// <param name="keyword">The keyword.</param>
         public void WriteKeyword(string keyword)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteKeyword(keyword);
         }
 
@@ -146,7 +131,7 @@ namespace Monoflector.Languages
         /// </summary>
         public void WriteLine()
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteLine();
         }
 
@@ -156,7 +141,7 @@ namespace Monoflector.Languages
         /// <param name="literal">The literal.</param>
         public void WriteLiteral(string literal)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteLiteral(literal);
         }
 
@@ -167,7 +152,7 @@ namespace Monoflector.Languages
         /// <param name="reference">The reference.</param>
         public void WriteReference(string value, object reference)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteReference(value, reference);
         }
 
@@ -176,7 +161,7 @@ namespace Monoflector.Languages
         /// </summary>
         public void WriteSpace()
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteSpace();
         }
 
@@ -186,8 +171,23 @@ namespace Monoflector.Languages
         /// <param name="token">The token.</param>
         public void WriteToken(string token)
         {
-            foreach (var hook in _formatters)
+            foreach (var hook in _formatters.Values)
                 hook.WriteToken(token);
+        }
+
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// </summary>
+        /// <param name="contentType">The desired MIME content-type.</param>
+        /// <returns>
+        /// A <see cref="System.String"/> that represents this instance.
+        /// </returns>
+        public string ToString(string contentType)
+        {
+            IFormatter tmp;
+            if (_formatters.TryGetValue(contentType, out tmp))
+                return tmp.ToString();
+            return null;
         }
     }
 }

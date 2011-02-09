@@ -54,12 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeAstPresenter.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CodeAstPresenter.Designer.cs">
-      <DependentUpon>CodeAstPresenter.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gac.cs" />
     <Compile Include="GacAssembly.cs" />
     <Compile Include="GacAssemblyProvider.cs" />
@@ -79,9 +73,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CodeAstPresenter.resx">
-      <DependentUpon>CodeAstPresenter.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

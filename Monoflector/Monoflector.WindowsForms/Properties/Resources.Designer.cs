@@ -120,6 +120,15 @@ namespace Monoflector.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Code (Plain).
+        /// </summary>
+        internal static string PlainTextAstPresenter {
+            get {
+                return ResourceManager.GetString("PlainTextAstPresenter", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);

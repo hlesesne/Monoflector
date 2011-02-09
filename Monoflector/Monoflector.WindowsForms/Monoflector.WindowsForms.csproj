@@ -39,9 +39,11 @@
   <ItemGroup>
     <Reference Include="Cecil.Decompiler, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Upstream\Cecil.Decompiler.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil, Version=0.9.4.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\Upstream\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition.Monoflector">
@@ -92,6 +94,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlainTextAstPresenter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlainTextAstPresenter.Designer.cs">
+      <DependentUpon>PlainTextAstPresenter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugins\ConfirmationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlainTextAstPresenter.resx">
+      <DependentUpon>PlainTextAstPresenter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plugins\ConfirmationDialog.resx">
       <DependentUpon>ConfirmationDialog.cs</DependentUpon>

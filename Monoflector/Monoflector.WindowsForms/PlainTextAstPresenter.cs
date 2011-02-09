@@ -7,27 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Monoflector.Interface;
-using Monoflector.Languages;
 using System.ComponentModel.Composition;
 
-namespace Monoflector.Windows
+namespace Monoflector
 {
+    [EnvironmentDependency("Windows")]
     [EnvironmentDependency("WindowsForms")]
-    public partial class CodeAstPresenter : UserControl, IAstPresenter
+    public partial class PlainTextAstPresenter : UserControl, IAstPresenter
     {
         public string DisplayName
         {
-            get { return Properties.Resources.CodeAstPresenterDisplayName; }
+            get { return Properties.Resources.PlainTextAstPresenter; }
         }
 
-        public CodeAstPresenter()
+        public PlainTextAstPresenter()
         {
             InitializeComponent();
         }
 
-        public void Present(DecompilationTarget node)
+        public void Present(Languages.DecompilationTarget node)
         {
-            textBox1.Text = node.ToString();
+            textBox1.Text = node.ToString("text/plain");
         }
     }
 }

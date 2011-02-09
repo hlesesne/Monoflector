@@ -24,6 +24,6 @@ namespace Monoflector.Languages
         /// </summary>
         /// <param name="item">The item that was decompiled.</param>
         /// <param name="target">The decompilation target.</param>
-        void CompleteDecompile(object item, DecompilationTarget target);
+        void CompleteDecompile(object item, DecompilationTarget target, FormatterChain containingChain);
     }
 }

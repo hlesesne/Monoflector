@@ -38,16 +38,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cecil.Decompiler, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Upstream\Cecil.Decompiler.dll</HintPath>
+      <HintPath>..\..\Upstream\Cecil.Decompiler.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil, Version=0.9.4.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\Upstream\Mono.Cecil.dll</HintPath>
+      <HintPath>..\..\Upstream\Mono.Cecil.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition.Monoflector">
-      <HintPath>..\Upstream\MEF\System.ComponentModel.Composition.Monoflector.dll</HintPath>
+      <HintPath>..\..\Upstream\MEF\System.ComponentModel.Composition.Monoflector.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Core" />

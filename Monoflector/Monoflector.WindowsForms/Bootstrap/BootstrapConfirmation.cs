@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Monoflector.Plugins
+namespace Monoflector.Bootstrap
 {
-    public partial class InstallationDialog : Form
+    public partial class BootstrapConfirmation : Form
     {
-        public InstallationDialog()
+        public BootstrapConfirmation()
         {
             InitializeComponent();
         }

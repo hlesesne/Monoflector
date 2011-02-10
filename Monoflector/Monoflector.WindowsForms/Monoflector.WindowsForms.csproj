@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\Bootstrap\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -87,6 +87,18 @@
     <Compile Include="AssemblySetNameForm.Designer.cs">
       <DependentUpon>AssemblySetNameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\BootstrapConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\BootstrapConfirmation.Designer.cs">
+      <DependentUpon>BootstrapConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\PluginSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\PluginSelection.Designer.cs">
+      <DependentUpon>PluginSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Host.cs" />
     <Compile Include="HtmlAstPresenter.cs">
       <SubType>UserControl</SubType>
@@ -106,30 +118,10 @@
     <Compile Include="PlainTextAstPresenter.Designer.cs">
       <DependentUpon>PlainTextAstPresenter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plugins\ConfirmationDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Plugins\ConfirmationDialog.Designer.cs">
-      <DependentUpon>ConfirmationDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Plugins\InstallationDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Plugins\InstallationDialog.Designer.cs">
-      <DependentUpon>InstallationDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Plugins\PluginInstaller.cs" />
-    <Compile Include="Plugins\ProgressDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Plugins\ProgressDialog.Designer.cs">
-      <DependentUpon>ProgressDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WatermarkBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="WindowsFormsBootstrapper.cs" />
     <Compile Include="WindowsInitialization.cs" />
     <EmbeddedResource Include="AssemblyProviderSelection.resx">
       <DependentUpon>AssemblyProviderSelection.cs</DependentUpon>
@@ -143,6 +135,12 @@
     <EmbeddedResource Include="AssemblySetNameForm.resx">
       <DependentUpon>AssemblySetNameForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bootstrap\BootstrapConfirmation.resx">
+      <DependentUpon>BootstrapConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bootstrap\PluginSelection.resx">
+      <DependentUpon>PluginSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HtmlAstPresenter.resx">
       <DependentUpon>HtmlAstPresenter.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,15 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlainTextAstPresenter.resx">
       <DependentUpon>PlainTextAstPresenter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Plugins\ConfirmationDialog.resx">
-      <DependentUpon>ConfirmationDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Plugins\InstallationDialog.resx">
-      <DependentUpon>InstallationDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Plugins\ProgressDialog.resx">
-      <DependentUpon>ProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,10 +208,21 @@
   <ItemGroup>
     <None Include="Resources\shCoreDefault.css" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="InstallDoc\index.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Manifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "%25APPDATA%25\Monoflector\Plugins"
-copy "$(TargetDir)*.*" "%25APPDATA%25\Monoflector\Plugins"</PostBuildEvent>
+    <PostBuildEvent>mkdir "%25APPDATA%25\Monoflector\Plugins\plugins.monoflector.org\Windows\Forms"
+copy "$(TargetDir)*.*" "%25APPDATA%25\Monoflector\Plugins\plugins.monoflector.org\Windows\Forms" /y
+mkdir "..\..\..\..\bin\Debug\Bootstrap"
+copy "$(TargetDir)*.*" "..\..\..\..\bin\Debug\Bootstrap" /y
+"..\..\..\..\Util\MakePlugin" "$(TargetDir)\" "..\..\..\..\bin\Debug\Bootstrap\Monoflector.org.Windows.Forms.mfplug"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

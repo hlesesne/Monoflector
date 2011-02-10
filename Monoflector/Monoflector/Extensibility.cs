@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.Composition.Hosting;
 using System.Configuration;
+using System.ComponentModel.Composition;
+using System.IO;
 
 namespace Monoflector.Runtime
 {
@@ -25,25 +27,23 @@ namespace Monoflector.Runtime
             }
         }
 
-        public static CompositionContainer InitializeRuntimeComposition()
+        internal static CompositionContainer InitializeBootstrapConfiguration()
         {
-            var cat1 = new DirectoryCatalog(Paths.Plugins);
-            var cat2 = new AssemblyCatalog(typeof(Program).Assembly);
-            var cat3 = new AssemblyCatalog(typeof(CompositionServices).Assembly);
-            var cat = new AggregateCatalog(cat1, cat2, cat3);
-            var ecat = new EnvironmentCatalog(cat, Environments);
+            var cat1 = new AssemblyCatalog(typeof(IMonoflectorHost).Assembly);
+            var cat2 = new DirectoryCatalog(Paths.Bootstrap);
+            var acat = new AggregateCatalog(cat1, cat2);
+            var ecat = new EnvironmentCatalog(acat, Environments);
             var cont = new CompositionContainer(ecat);
             CompositionServices.Initialize(cont);
             return cont;
         }
 
-        internal static CompositionContainer InitializeBootstrapComposition()
+        internal static CompositionContainer InitializeConfiguration(ExportContext context)
         {
-            var cat1 = new DirectoryCatalog(Paths.Bootstrap);
-            var cat2 = new AssemblyCatalog(typeof(Program).Assembly);
-            var cat3 = new AssemblyCatalog(typeof(CompositionServices).Assembly);
-            var cat = new AggregateCatalog(cat1, cat2, cat3);
-            var ecat = new EnvironmentCatalog(cat, Environments);
+            var cat1 = PluginCatalog.Create(context);
+            if (cat1 == null)
+                return null;
+            var ecat = new EnvironmentCatalog(cat1, Environments);
             var cont = new CompositionContainer(ecat);
             CompositionServices.Initialize(cont);
             return cont;

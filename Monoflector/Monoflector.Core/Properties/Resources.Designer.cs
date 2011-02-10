@@ -131,5 +131,14 @@ namespace Monoflector.Properties {
                 return ResourceManager.GetString("ProcessorArchitecture_X86", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The given context is not supported..
+        /// </summary>
+        internal static string ContextNotSupported {
+            get {
+                return ResourceManager.GetString("ContextNotSupported", resourceCulture);
+            }
+        }
     }
 }

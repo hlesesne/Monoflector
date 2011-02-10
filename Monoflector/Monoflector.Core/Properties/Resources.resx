@@ -144,4 +144,8 @@
     <value>languageWriterCreator returned a null value.</value>
     <comment>LanguageWriterCreator_NullValue description</comment>
   </data>
+  <data name="ContextNotSupported" xml:space="preserve">
+    <value>The given context is not supported.</value>
+    <comment>ContextNotSupported description</comment>
+  </data>
 </root>

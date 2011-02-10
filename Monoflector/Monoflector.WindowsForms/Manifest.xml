@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Plugin xmlns="http://schemas.monoflector.org/plugins/2011/definition"
+        Identity="plugins.monoflector.org/Windows/Forms"
+        Version="1.0.0.0">
+  <Title>Windows Forms</Title>
+  <Author>Monoflector Project</Author>
+  <Description>Required windows functionality.</Description>
+  <InstallDocumentation>InstallDoc</InstallDocumentation>
+
+  <Deployment xmlns:files="http://schemas.monoflector.org/plugins/2011/deployment/files"
+              xmlns:mef="http://schemas.monoflector.org/plugins/2011/deployment/mef">
+
+    <files:copy Filename="Monoflector.WindowsForms.dll" />
+    <files:copy Filename="Monoflector.WindowsForms.pdb" />
+
+    <mef:activate Filename="Monoflector.WindowsForms.dll" Context="Normal" />
+    <mef:activate Filename="Monoflector.WindowsForms.dll" Context="Installation" />
+
+  </Deployment>
+
+</Plugin>

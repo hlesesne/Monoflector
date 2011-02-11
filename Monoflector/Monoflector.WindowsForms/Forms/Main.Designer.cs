@@ -27,9 +27,9 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this._SplitContainer = new System.Windows.Forms.SplitContainer();
 			this._SplitContainerLeft = new System.Windows.Forms.SplitContainer();
-			this._Tree = new Monoflector.Controls.AssemblyTree();
+			this._Tree = new Monoflector.Windows.Controls.AssemblyTree();
 			this._ImageList = new System.Windows.Forms.ImageList(this.components);
-			this._BrowserObject = new Monoflector.Controls.CodeBrowser();
+			this._BrowserObject = new Monoflector.Windows.Controls.CodeBrowser();
 			this._Container = new System.Windows.Forms.ToolStripContainer();
 			this._Status = new System.Windows.Forms.StatusStrip();
 			this._MenuStrip = new System.Windows.Forms.MenuStrip();
@@ -373,7 +373,7 @@
 			// 
 			// _MenuItemOpen
 			// 
-			this._MenuItemOpen.Image = global::Monoflector.Resources.Png.open;
+			this._MenuItemOpen.Image = global::Monoflector.Windows.Resources.Png.open;
 			this._MenuItemOpen.Name = "_MenuItemOpen";
 			this._MenuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this._MenuItemOpen.Size = new System.Drawing.Size(243, 22);
@@ -381,7 +381,7 @@
 			// 
 			// _MenuItemOpenGac
 			// 
-			this._MenuItemOpenGac.Image = global::Monoflector.Resources.Png.open_gac;
+			this._MenuItemOpenGac.Image = global::Monoflector.Windows.Resources.Png.open_gac;
 			this._MenuItemOpenGac.Name = "_MenuItemOpenGac";
 			this._MenuItemOpenGac.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
 									| System.Windows.Forms.Keys.O)));
@@ -395,7 +395,7 @@
 			// 
 			// _MenuItemBookmark
 			// 
-			this._MenuItemBookmark.Image = global::Monoflector.Resources.Png.bookmark_add;
+			this._MenuItemBookmark.Image = global::Monoflector.Windows.Resources.Png.bookmark_add;
 			this._MenuItemBookmark.Name = "_MenuItemBookmark";
 			this._MenuItemBookmark.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._MenuItemBookmark.Size = new System.Drawing.Size(243, 22);
@@ -403,7 +403,7 @@
 			// 
 			// _MenuItemBookmarkRemove
 			// 
-			this._MenuItemBookmarkRemove.Image = global::Monoflector.Resources.Png.bookmark_remove;
+			this._MenuItemBookmarkRemove.Image = global::Monoflector.Windows.Resources.Png.bookmark_remove;
 			this._MenuItemBookmarkRemove.Name = "_MenuItemBookmarkRemove";
 			this._MenuItemBookmarkRemove.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._MenuItemBookmarkRemove.Size = new System.Drawing.Size(243, 22);
@@ -412,7 +412,7 @@
 			// 
 			// _MenuItemClose
 			// 
-			this._MenuItemClose.Image = global::Monoflector.Resources.Png.close;
+			this._MenuItemClose.Image = global::Monoflector.Windows.Resources.Png.close;
 			this._MenuItemClose.Name = "_MenuItemClose";
 			this._MenuItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
 			this._MenuItemClose.Size = new System.Drawing.Size(243, 22);
@@ -464,43 +464,43 @@
 			// 
 			// _MenuItemBookmarks
 			// 
-			this._MenuItemBookmarks.Image = global::Monoflector.Resources.Png.bookmarks;
+			this._MenuItemBookmarks.Image = global::Monoflector.Windows.Resources.Png.bookmarks;
 			this._MenuItemBookmarks.Name = "_MenuItemBookmarks";
-			this._MenuItemBookmarks.Size = new System.Drawing.Size(135, 22);
+			this._MenuItemBookmarks.Size = new System.Drawing.Size(152, 22);
 			this._MenuItemBookmarks.Text = "&Bookmarks";
 			// 
 			// _MenuItemSearch
 			// 
-			this._MenuItemSearch.Image = global::Monoflector.Resources.Png.search;
+			this._MenuItemSearch.Image = global::Monoflector.Windows.Resources.Png.search;
 			this._MenuItemSearch.Name = "_MenuItemSearch";
 			this._MenuItemSearch.ShortcutKeys = System.Windows.Forms.Keys.F3;
-			this._MenuItemSearch.Size = new System.Drawing.Size(135, 22);
+			this._MenuItemSearch.Size = new System.Drawing.Size(152, 22);
 			this._MenuItemSearch.Text = "&Search";
 			// 
 			// _MenuItemDecompiler
 			// 
-			this._MenuItemDecompiler.Image = global::Monoflector.Resources.Png.decompile;
+			this._MenuItemDecompiler.Image = global::Monoflector.Windows.Resources.Png.decompile;
 			this._MenuItemDecompiler.Name = "_MenuItemDecompiler";
-			this._MenuItemDecompiler.Size = new System.Drawing.Size(135, 22);
+			this._MenuItemDecompiler.Size = new System.Drawing.Size(152, 22);
 			this._MenuItemDecompiler.Text = "&Decompiler";
 			// 
 			// _MenuItemAnalyzer
 			// 
-			this._MenuItemAnalyzer.Image = global::Monoflector.Resources.Png.analyze;
+			this._MenuItemAnalyzer.Image = global::Monoflector.Windows.Resources.Png.analyze;
 			this._MenuItemAnalyzer.Name = "_MenuItemAnalyzer";
-			this._MenuItemAnalyzer.Size = new System.Drawing.Size(135, 22);
+			this._MenuItemAnalyzer.Size = new System.Drawing.Size(152, 22);
 			this._MenuItemAnalyzer.Text = "&Analyzer";
 			// 
 			// toolStripMenuItem7
 			// 
 			this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-			this.toolStripMenuItem7.Size = new System.Drawing.Size(132, 6);
+			this.toolStripMenuItem7.Size = new System.Drawing.Size(149, 6);
 			// 
 			// _MenuItemPrefs
 			// 
-			this._MenuItemPrefs.Image = global::Monoflector.Resources.Png.preferences;
+			this._MenuItemPrefs.Image = global::Monoflector.Windows.Resources.Png.preferences;
 			this._MenuItemPrefs.Name = "_MenuItemPrefs";
-			this._MenuItemPrefs.Size = new System.Drawing.Size(135, 22);
+			this._MenuItemPrefs.Size = new System.Drawing.Size(152, 22);
 			this._MenuItemPrefs.Text = "&Preferences";
 			// 
 			// _MenuHelp
@@ -513,7 +513,7 @@
 			// 
 			// _MenuItemHelpDummy
 			// 
-			this._MenuItemHelpDummy.Image = global::Monoflector.Resources.Png.help;
+			this._MenuItemHelpDummy.Image = global::Monoflector.Windows.Resources.Png.help;
 			this._MenuItemHelpDummy.Name = "_MenuItemHelpDummy";
 			this._MenuItemHelpDummy.Size = new System.Drawing.Size(147, 22);
 			this._MenuItemHelpDummy.Text = "Dummy Entry";
@@ -545,14 +545,14 @@
 			this._ButtonOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._ButtonItemOpen,
             this._ButtonItemOpenGac});
-			this._ButtonOpen.Image = global::Monoflector.Resources.Png.open;
+			this._ButtonOpen.Image = global::Monoflector.Windows.Resources.Png.open;
 			this._ButtonOpen.Name = "_ButtonOpen";
 			this._ButtonOpen.Size = new System.Drawing.Size(32, 22);
 			this._ButtonOpen.Text = "Open...";
 			// 
 			// _ButtonItemOpen
 			// 
-			this._ButtonItemOpen.Image = global::Monoflector.Resources.Png.open;
+			this._ButtonItemOpen.Image = global::Monoflector.Windows.Resources.Png.open;
 			this._ButtonItemOpen.Name = "_ButtonItemOpen";
 			this._ButtonItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this._ButtonItemOpen.Size = new System.Drawing.Size(243, 22);
@@ -560,7 +560,7 @@
 			// 
 			// _ButtonItemOpenGac
 			// 
-			this._ButtonItemOpenGac.Image = global::Monoflector.Resources.Png.open_gac;
+			this._ButtonItemOpenGac.Image = global::Monoflector.Windows.Resources.Png.open_gac;
 			this._ButtonItemOpenGac.Name = "_ButtonItemOpenGac";
 			this._ButtonItemOpenGac.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
 									| System.Windows.Forms.Keys.O)));
@@ -575,7 +575,7 @@
 			// _ButtonBack
 			// 
 			this._ButtonBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonBack.Image = global::Monoflector.Resources.Png.back;
+			this._ButtonBack.Image = global::Monoflector.Windows.Resources.Png.back;
 			this._ButtonBack.Name = "_ButtonBack";
 			this._ButtonBack.Size = new System.Drawing.Size(23, 22);
 			this._ButtonBack.Text = "Back";
@@ -583,7 +583,7 @@
 			// _ButtonForward
 			// 
 			this._ButtonForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonForward.Image = global::Monoflector.Resources.Png.forward;
+			this._ButtonForward.Image = global::Monoflector.Windows.Resources.Png.forward;
 			this._ButtonForward.Name = "_ButtonForward";
 			this._ButtonForward.Size = new System.Drawing.Size(23, 22);
 			this._ButtonForward.Text = "Forward";
@@ -596,7 +596,7 @@
 			// _ButtonRefresh
 			// 
 			this._ButtonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonRefresh.Image = global::Monoflector.Resources.Png.refresh;
+			this._ButtonRefresh.Image = global::Monoflector.Windows.Resources.Png.refresh;
 			this._ButtonRefresh.Name = "_ButtonRefresh";
 			this._ButtonRefresh.Size = new System.Drawing.Size(23, 22);
 			this._ButtonRefresh.Text = "Refresh";
@@ -609,7 +609,7 @@
 			// _ButtonBookmarks
 			// 
 			this._ButtonBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonBookmarks.Image = global::Monoflector.Resources.Png.bookmarks;
+			this._ButtonBookmarks.Image = global::Monoflector.Windows.Resources.Png.bookmarks;
 			this._ButtonBookmarks.Name = "_ButtonBookmarks";
 			this._ButtonBookmarks.Size = new System.Drawing.Size(23, 22);
 			this._ButtonBookmarks.Text = "Bookmarks";
@@ -623,7 +623,7 @@
 			// _ButtonSearch
 			// 
 			this._ButtonSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonSearch.Image = global::Monoflector.Resources.Png.search;
+			this._ButtonSearch.Image = global::Monoflector.Windows.Resources.Png.search;
 			this._ButtonSearch.Name = "_ButtonSearch";
 			this._ButtonSearch.Size = new System.Drawing.Size(23, 22);
 			this._ButtonSearch.Text = "Search";
@@ -712,7 +712,7 @@
 			// 
 			// _PopItemBookmarkAdd
 			// 
-			this._PopItemBookmarkAdd.Image = global::Monoflector.Resources.Png.bookmark_add;
+			this._PopItemBookmarkAdd.Image = global::Monoflector.Windows.Resources.Png.bookmark_add;
 			this._PopItemBookmarkAdd.Name = "_PopItemBookmarkAdd";
 			this._PopItemBookmarkAdd.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._PopItemBookmarkAdd.Size = new System.Drawing.Size(224, 22);
@@ -720,7 +720,7 @@
 			// 
 			// _PopItemBookmarkRemove
 			// 
-			this._PopItemBookmarkRemove.Image = global::Monoflector.Resources.Png.bookmark_remove;
+			this._PopItemBookmarkRemove.Image = global::Monoflector.Windows.Resources.Png.bookmark_remove;
 			this._PopItemBookmarkRemove.Name = "_PopItemBookmarkRemove";
 			this._PopItemBookmarkRemove.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._PopItemBookmarkRemove.Size = new System.Drawing.Size(224, 22);
@@ -754,7 +754,7 @@
 			// 
 			// _PopItemClose
 			// 
-			this._PopItemClose.Image = global::Monoflector.Resources.Png.close;
+			this._PopItemClose.Image = global::Monoflector.Windows.Resources.Png.close;
 			this._PopItemClose.Name = "_PopItemClose";
 			this._PopItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
 			this._PopItemClose.Size = new System.Drawing.Size(224, 22);
@@ -788,7 +788,7 @@
 			this.ClientSize = new System.Drawing.Size(517, 597);
 			this.Controls.Add(this._Container);
 			this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Icon = global::Monoflector.Resources.Icons.monoflector;
+			this.Icon = global::Monoflector.Windows.Resources.Icons.monoflector;
 			this.MainMenuStrip = this._MenuStrip;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "Main";
@@ -819,8 +819,8 @@
 		#endregion
 
 		private System.Windows.Forms.SplitContainer _SplitContainer;
-		private Monoflector.Controls.AssemblyTree _Tree;
-		private Monoflector.Controls.CodeBrowser _BrowserObject;
+		private Monoflector.Windows.Controls.AssemblyTree _Tree;
+		private Monoflector.Windows.Controls.CodeBrowser _BrowserObject;
 		private System.Windows.Forms.ToolStripContainer _Container;
 		private System.Windows.Forms.StatusStrip _Status;
 		private System.Windows.Forms.ToolStrip _ButtonStrip;

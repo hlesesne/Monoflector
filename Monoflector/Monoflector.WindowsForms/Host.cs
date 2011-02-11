@@ -54,7 +54,7 @@ namespace Monoflector
                 }
                 else
                 {
-                    using (var frm = new MainForm())
+                    using (var frm = new Forms.Main())
                     {
                         // TODO: Open assemblies.
                         Application.Run(frm);

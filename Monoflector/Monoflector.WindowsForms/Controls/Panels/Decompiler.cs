@@ -1,9 +1,16 @@
-﻿using System;
+﻿using Cecil.Decompiler.Languages;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Monoflector.Controls.Panels {
+using Mono.Cecil;
+
+using Monoflector.Windows.Controls;
+using Monoflector.Windows.Controls.Panels;
+
+namespace Monoflector.Windows.Controls.Panels {
 	public class Decompiler : DockPanel {
 		private XPTabControl _Tabs;
 		private System.Windows.Forms.TabPage _TabHtml;
@@ -14,12 +21,14 @@ namespace Monoflector.Controls.Panels {
 			this.Text = "Decompiler";
 
 			InitializeComponent();
+
+			_Browser.Navigate("about:blank");
 		}
 
 		private void InitializeComponent() {
-			this._Tabs = new Monoflector.Controls.XPTabControl();
+			this._Tabs = new Monoflector.Windows.Controls.XPTabControl();
 			this._TabHtml = new System.Windows.Forms.TabPage();
-			this._Browser = new Monoflector.Controls.CodeBrowser();
+			this._Browser = new Monoflector.Windows.Controls.CodeBrowser();
 			this._TabIL = new System.Windows.Forms.TabPage();
 			this._Content.SuspendLayout();
 			this._Tabs.SuspendLayout();
@@ -81,6 +90,26 @@ namespace Monoflector.Controls.Panels {
 			this._TabHtml.ResumeLayout(false);
 			this.ResumeLayout(false);
 
+		}
+
+		public override void OnDefinitionSelected(object definition) {
+			if (definition is MethodDefinition) {
+				
+				var def = definition as MethodDefinition;
+				var target = ApplicationContext.Instance.SelectedLanguage.CreateDecompilationTarget();
+				
+				try {
+					((ILanguageWriter)target).Write(def);
+				}
+				catch {
+				}
+
+				_Browser.SetContent(target.ToString("text/plain"));
+			}			
+		}
+
+		public override void OnDefinitionDoubleClicked(object definition) {
+			this.Visible = true;
 		}
 
 	}

@@ -10,8 +10,8 @@ using System.Windows.Forms.VisualStyles;
 
 using Mono.Cecil;
 
-using Monoflector.Controls;
-using Monoflector.Controls.Panels;
+using Monoflector.Windows.Controls;
+using Monoflector.Windows.Controls.Panels;
 
 namespace Monoflector.Forms {
 	public partial class Main : Form {
@@ -20,19 +20,25 @@ namespace Monoflector.Forms {
 		private Bookmarks _Bookmarks;
 		private Decompiler _Decompiler;
 		private Search _Search;
-		private Analyzer _Analyzer;
 
 		public Main() {
 			InitializeComponent();
 
 			_Dock = _SplitContainer.Panel2;
-			_ComboLanguage.SelectedIndex = 1;
+			_ComboLanguage.SelectedIndex = 0;
 
 			this._SplitContainer.FixedPanel = FixedPanel.Panel1;
 
 			InitPanels();
 
-			_MenuItemAnalyzer.Click += ToggleAnalyzer;
+			AssemblyDefinition asm = AssemblyDefinition.ReadAssembly(@"C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll");
+
+			_Tree.BeginUpdate();
+			_Tree.AddAssembly(asm);
+			_Tree.EndUpdate();
+
+			_Tree.DefinitionSelected += _Tree_DefinitionSelected;
+			_Tree.DefinitionDoubleClicked += _Tree_DefinitionDoubleClicked;
 
 			_MenuItemBookmarks.Click += ToggleBookmarks;
 			_ButtonBookmarks.Click += ToggleBookmarks;
@@ -50,17 +56,6 @@ namespace Monoflector.Forms {
 			};
 		}
 
-		protected override void OnLoad(EventArgs e) {
-
-			AssemblyDefinition asm = AssemblyDefinition.ReadAssembly(@"C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll");
-
-			_Tree.BeginUpdate();
-			_Tree.AddAssembly(asm);
-			_Tree.EndUpdate();			
-			
-			base.OnLoad(e);
-		}
-
 		protected override void OnSizeChanged(EventArgs e) {
 			
 			// TODO - resize the panels within _Dock. it's the only part of the dock mechanism not working correctly.
@@ -71,10 +66,9 @@ namespace Monoflector.Forms {
 		private void InitPanels() {
 
 			_Bookmarks = new Bookmarks();
-			_Decompiler = new Decompiler();
-			_Analyzer = new Analyzer();
 			_Search = new Search();
-
+			_Decompiler = new Decompiler();
+			
 			this._SplitContainer.Panel2.SuspendLayout();
 			this._SplitContainer.SuspendLayout();
 			this.SuspendLayout();
@@ -82,9 +76,8 @@ namespace Monoflector.Forms {
 			AddPanel(_Bookmarks);
 			AddPanel(_Search);
 			AddPanel(_Decompiler);
-			AddPanel(_Analyzer);
 
-			_Bookmarks.Visible = _Search.Visible = _Decompiler.Visible = _Analyzer.Visible = false;
+			_Bookmarks.Visible = _Search.Visible = _Decompiler.Visible = false;
 			_SplitContainer.Panel2Collapsed = true;
 
 			this.ResumeLayout(false);
@@ -133,8 +126,17 @@ namespace Monoflector.Forms {
 
 				if (controls.First() == panel) {
 					splitter = panel.Next() as Splitter;
+
+					if (panel.Visible) {
+						panel.Dock = DockStyle.Fill;
+					}
+
 				}
 				else {
+					if (panel.Visible) {
+						panel.Dock = DockStyle.Top;
+					}
+
 					splitter = panel.Previous() as Splitter;
 				}
 
@@ -156,12 +158,6 @@ namespace Monoflector.Forms {
 			};
 		}
 
-
-
-		private void ToggleAnalyzer(object sender, EventArgs e) {
-			_Analyzer.Toggle();
-		}
-
 		private void ToggleBookmarks(object sender, EventArgs e) {
 			_Bookmarks.Toggle();
 		}
@@ -173,5 +169,27 @@ namespace Monoflector.Forms {
 		private void ToggleSearch(object sender, EventArgs e) {
 			_Search.Toggle();
 		}
+
+		private IEnumerable<DockPanel> GetPanels() {
+			return _Dock.Controls.Cast<Control>().Where(o => o is DockPanel).Select(o => o as DockPanel);
+		}
+
+#region .    EventHandlers    
+
+		private void _Tree_DefinitionSelected(object definition){
+			IEnumerable<DockPanel> panels = GetPanels();
+			foreach (var panel in panels) {
+				panel.OnDefinitionSelected(definition);
+			}
+		}
+
+		private void _Tree_DefinitionDoubleClicked(object definition) {
+			IEnumerable<DockPanel> panels = GetPanels();
+			foreach (var panel in panels) {
+				panel.OnDefinitionDoubleClicked(definition);
+			}
+		}
+
+#endregion
 	}
 }

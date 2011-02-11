@@ -5,7 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Monoflector.Controls.Panels {
+using Monoflector.Windows.Controls;
+using Monoflector.Windows.Controls.Panels;
+
+namespace Monoflector.Windows.Controls.Panels {
 	public class Search : DockPanel {
 		private ListView _List;
 		private ColumnHeader _HeaderType;

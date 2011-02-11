@@ -39,6 +39,7 @@ namespace Monoflector.Forms {
 
 			_Tree.DefinitionSelected += _Tree_DefinitionSelected;
 			_Tree.DefinitionDoubleClicked += _Tree_DefinitionDoubleClicked;
+			_Tree.NodeMouseClick += _Tree_NodeMouseClick;
 
 			_MenuItemBookmarks.Click += ToggleBookmarks;
 			_ButtonBookmarks.Click += ToggleBookmarks;
@@ -187,6 +188,12 @@ namespace Monoflector.Forms {
 			IEnumerable<DockPanel> panels = GetPanels();
 			foreach (var panel in panels) {
 				panel.OnDefinitionDoubleClicked(definition);
+			}
+		}
+
+		private void _Tree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) {
+			if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+				_TreeMenu.Show(_Tree.PointToScreen(e.Location));
 			}
 		}
 

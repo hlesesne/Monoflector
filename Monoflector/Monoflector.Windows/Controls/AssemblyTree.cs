@@ -77,14 +77,6 @@ namespace Monoflector.Windows.Controls {
 			base.OnNodeMouseDoubleClick(e);
 		}
 
-		protected override void OnNodeMouseClick(TreeNodeMouseClickEventArgs e) {
-			if (e.Button == System.Windows.Forms.MouseButtons.Right) {
-				// TODO - display context menu
-			}
-
-			base.OnNodeMouseClick(e);
-		}
-
 		protected override void OnAfterSelect(TreeViewEventArgs e) {
 			if (DefinitionSelected != null) {
 				var node = e.Node as AssemblyTreeNode;

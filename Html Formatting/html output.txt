@@ -1,0 +1,46 @@
+<table>
+<tr>
+	<td class="gutter">
+		<a name="L1">1</div>
+		<div class="line number2 index1 alt1">2</div>
+		<div class="line number3 index2 alt2">3</div>
+		<div class="line number4 index3 alt1">4</div>
+	</td>
+	<td class="code">
+		<div class="container">
+			<div class="line number1 index0 alt2">
+				<code class="csharp keyword">public</code>
+				<code class="csharp plain">&nbsp;</code>
+				<code class="csharp TypeDef dataToken402">ICodeCompiler</code>
+				<code class="csharp plain">&nbsp;</code>
+				<code class="csharp plain">CreateCompiler</code>
+				<code class="csharp token">(</code>
+				<code class="csharp token">)</code>
+			</div>
+			<div class="line number2 index1 alt1">
+				<code class="csharp token">
+					<code class="csharp spaces" />
+					{
+				</code>
+			</div>
+			<div class="line number3 index2 alt2">
+				<code class="csharp keyword">
+					<code class="csharp spaces">&nbsp;&nbsp;</code>
+					return
+				</code>
+				<code class="csharp plain">&nbsp;</code>
+				<code class="csharp keyword">this</code>
+				<code class="csharp token">.</code>
+				<code class="csharp plain">generator</code>
+				<code class="csharp token">;</code>
+			</div>
+			<div class="line number4 index3 alt1">
+				<code class="csharp token">
+					<code class="csharp spaces" />
+					}
+				</code>
+			</div>
+		</div>
+	</td>
+</tr>
+</table>

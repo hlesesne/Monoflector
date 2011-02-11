@@ -1,0 +1,44 @@
+public void .ctor(IDictionary providerOptions) {
+	this..ctor();
+	if (!providerOptions) {
+		throw new ArgumentNullException("providerOptions");
+	}
+	this.generator = new CSharpCodeGenerator(providerOptions); 
+} 
+
+<table>
+<tr>
+	<td>
+		<a name="L1">1</a>
+		<a name="L2">2</a>
+		<a name="L3">3</a>
+		<a name="L4">4</a>
+		<a name="L5">5</a>
+		<a name="L6">6/a>
+		<a name="L7">7</a>
+	</td>
+	<td>
+		<div id="L1">
+			<code class="k">public</code>&nbsp;<code class="k">void</code>&nbsp;<code class="nf">.ctor</code><code class="po">(</code><code class="pt">IDictionary</code>&nbsp;<code class="pn">providerOptions</code><code class="pc">)</code>&nbsp;<code class="bo">{</code>
+		</div>
+		<div id="L2">
+			<code class="tab"/><code class="k">this</code><code class="t">.</code><code class="nf">.ctor</code><code class="po">(</code><code class="pc">)</code><code class="t">;</code>
+		</div>
+		<div id="L3">
+			<code class="tab"/><code class="k">if</code>&nbsp;<code class="po">(</code><code class="ow">!</code><code class="vi">providerOptions</code><code class="pc">)</code>&nbsp;<code class="bo">{</code>
+		</div>
+		<div id="L4">
+			<code class="tab"/><code class="tab"/><code class="k">throw</code>&nbsp;<code class="k">new</code>&nbsp;<code class="ni">ArgumentNullException</code><code class="po">(</code><code class="sc">"providerOptions"</code><code class="pc">)</code><code class="t">;</code>
+		</div>
+		<div id="L5">
+			<code class="tab"/><code class="bc">}</code>
+		</div>
+		<div id="L6">
+			<code class="tab"/><code class="k">this</code><code class="t">.</code><code class="nmf">generator</code>&nbsp;<code class="ow">=</code>&nbsp;<code class="k">new</code>&nbsp;<code class="ni">CSharpCodeGenerator</code><code class="po">(</code><code class="vi">providerOptions</code><code class="pc">)</code><code class="t">;</code>
+		</div>
+		<div id="L7">
+			<code class="bc">}</code>
+		</div>
+	</td>
+</tr>
+</table>

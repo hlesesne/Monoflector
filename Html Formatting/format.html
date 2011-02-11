@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	
+	<link rel="stylesheet" href="pygments.css"/>
+</head>
+<body>
+	<strong>Original Source:</strong>
+	<pre>
+public void .ctor(IDictionary providerOptions) {
+	this..ctor();
+	if (!providerOptions) {
+		throw new ArgumentNullException("providerOptions");
+	}
+	this.generator = new CSharpCodeGenerator(providerOptions); 
+} 	
+	</pre>
+	
+	<strong>Highlighted Source:</strong>
+	<table class="syntax" cellspacing="0" cellpadding="0">
+	<tr>
+		<td valign="top" class="hll">
+			<a name="L1">1</a>
+			<a name="L2">2</a>
+			<a name="L3">3</a>
+			<a name="L4">4</a>
+			<a name="L5">5</a>
+			<a name="L6">6</a>
+			<a name="L7">7</a>
+		</td>
+		<td width="100%">
+			<div id="L1">
+				<span class="k">public</span>&nbsp;<span class="k">void</span>&nbsp;<span class="nf">.ctor</span><span class="po">(</span><span class="pt">IDictionary</span>&nbsp;<span class="pn">providerOptions</span><span class="pc">)</span>&nbsp;<span class="bo">{</span>
+			</div>
+			<div id="L2">
+				<span class="tab"/><span class="k">this</span><span class="t">.</span><span class="nf">.ctor</span><span class="po">(</span><span class="pc">)</span><span class="t">;</span>
+			</div>
+			<div id="L3">
+				<span class="tab"/><span class="k">if</span>&nbsp;<span class="po">(</span><span class="ow">!</span><span class="vi">providerOptions</span><span class="pc">)</span>&nbsp;<span class="bo">{</span>
+			</div>
+			<div id="L4">
+				<span class="tab"/><span class="tab"/><span class="k">throw</span>&nbsp;<span class="k">new</span>&nbsp;<span class="ni">ArgumentNullException</span><span class="po">(</span><span class="sc">"providerOptions"</span><span class="pc">)</span><span class="t">;</span>
+			</div>
+			<div id="L5">
+				<span class="tab"/><span class="bc">}</span>
+			</div>
+			<div id="L6">
+				<span class="tab"/><span class="k">this</span><span class="t">.</span><span class="nmf">generator</span>&nbsp;<span class="ow">=</span>&nbsp;<span class="k">new</span>&nbsp;<span class="ni">CSharpCodeGenerator</span><span class="po">(</span><span class="vi">providerOptions</span><span class="pc">)</span><span class="t">;</span>
+			</div>
+			<div id="L7">
+				<span class="bc">}</span>
+			</div>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

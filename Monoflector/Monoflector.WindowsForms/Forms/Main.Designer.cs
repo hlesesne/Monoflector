@@ -28,7 +28,6 @@
 			this._SplitContainer = new System.Windows.Forms.SplitContainer();
 			this._SplitContainerLeft = new System.Windows.Forms.SplitContainer();
 			this._Tree = new Monoflector.Windows.Controls.AssemblyTree();
-			this._ImageList = new System.Windows.Forms.ImageList(this.components);
 			this._BrowserObject = new Monoflector.Windows.Controls.CodeBrowser();
 			this._Container = new System.Windows.Forms.ToolStripContainer();
 			this._Status = new System.Windows.Forms.StatusStrip();
@@ -142,162 +141,14 @@
 			// 
 			this._Tree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this._Tree.HotTracking = true;
-			this._Tree.ImageIndex = 0;
-			this._Tree.ImageList = this._ImageList;
 			this._Tree.ItemHeight = 20;
 			this._Tree.Location = new System.Drawing.Point(0, 0);
 			this._Tree.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this._Tree.Name = "_Tree";
-			this._Tree.SelectedImageIndex = 0;
 			this._Tree.ShowLines = false;
 			this._Tree.ShowNodeToolTips = true;
 			this._Tree.Size = new System.Drawing.Size(517, 408);
 			this._Tree.TabIndex = 0;
-			// 
-			// _ImageList
-			// 
-			this._ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_ImageList.ImageStream")));
-			this._ImageList.TransparentColor = System.Drawing.Color.Fuchsia;
-			this._ImageList.Images.SetKeyName(0, "VSObject_Assembly.bmp");
-			this._ImageList.Images.SetKeyName(1, "VSObject_Class.bmp");
-			this._ImageList.Images.SetKeyName(2, "VSObject_Class_Friend.bmp");
-			this._ImageList.Images.SetKeyName(3, "VSObject_Class_Private.bmp");
-			this._ImageList.Images.SetKeyName(4, "VSObject_Class_Protected.bmp");
-			this._ImageList.Images.SetKeyName(5, "VSObject_Class_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(6, "VSObject_Constant.bmp");
-			this._ImageList.Images.SetKeyName(7, "VSObject_Constant_Friend.bmp");
-			this._ImageList.Images.SetKeyName(8, "VSObject_Constant_Private.bmp");
-			this._ImageList.Images.SetKeyName(9, "VSObject_Constant_Protected.bmp");
-			this._ImageList.Images.SetKeyName(10, "VSObject_Constant_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(11, "VSObject_Constructor.bmp");
-			this._ImageList.Images.SetKeyName(12, "VSObject_Constructor_Friend.bmp");
-			this._ImageList.Images.SetKeyName(13, "VSObject_Constructor_Private.bmp");
-			this._ImageList.Images.SetKeyName(14, "VSObject_Constructor_Protected.bmp");
-			this._ImageList.Images.SetKeyName(15, "VSObject_Constructor_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(16, "VSObject_Constructor_Static.bmp");
-			this._ImageList.Images.SetKeyName(17, "VSObject_Constructor_Static_Friend.bmp");
-			this._ImageList.Images.SetKeyName(18, "VSObject_Constructor_Static_Private.bmp");
-			this._ImageList.Images.SetKeyName(19, "VSObject_Constructor_Static_Protected.bmp");
-			this._ImageList.Images.SetKeyName(20, "VSObject_Constructor_Static_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(21, "VSObject_Delegate.bmp");
-			this._ImageList.Images.SetKeyName(22, "VSObject_Delegate_Friend.bmp");
-			this._ImageList.Images.SetKeyName(23, "VSObject_Delegate_Private.bmp");
-			this._ImageList.Images.SetKeyName(24, "VSObject_Delegate_Protected.bmp");
-			this._ImageList.Images.SetKeyName(25, "VSObject_Delegate_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(26, "VSObject_Dummy.bmp");
-			this._ImageList.Images.SetKeyName(27, "VSObject_Enum.bmp");
-			this._ImageList.Images.SetKeyName(28, "VSObject_Enum_Friend.bmp");
-			this._ImageList.Images.SetKeyName(29, "VSObject_Enum_Protected.bmp");
-			this._ImageList.Images.SetKeyName(30, "VSObject_Enum_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(31, "VSObject_EnumItem.bmp");
-			this._ImageList.Images.SetKeyName(32, "VSObject_EnumItem_Friend.bmp");
-			this._ImageList.Images.SetKeyName(33, "VSObject_EnumItem_Private.bmp");
-			this._ImageList.Images.SetKeyName(34, "VSObject_EnumItem_Protected.bmp");
-			this._ImageList.Images.SetKeyName(35, "VSObject_EnumItem_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(36, "VSObject_EnumPrivate.bmp");
-			this._ImageList.Images.SetKeyName(37, "VSObject_Event.bmp");
-			this._ImageList.Images.SetKeyName(38, "VSObject_Event_Friend.bmp");
-			this._ImageList.Images.SetKeyName(39, "VSObject_Event_Private.bmp");
-			this._ImageList.Images.SetKeyName(40, "VSObject_Event_Protected.bmp");
-			this._ImageList.Images.SetKeyName(41, "VSObject_Event_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(42, "VSObject_Event_Static.bmp");
-			this._ImageList.Images.SetKeyName(43, "VSObject_Event_Static_Friend.bmp");
-			this._ImageList.Images.SetKeyName(44, "VSObject_Event_Static_Private.bmp");
-			this._ImageList.Images.SetKeyName(45, "VSObject_Event_Static_Protected.bmp");
-			this._ImageList.Images.SetKeyName(46, "VSObject_Event_Static_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(47, "VSObject_Exception.bmp");
-			this._ImageList.Images.SetKeyName(48, "VSObject_Exception_Friend.bmp");
-			this._ImageList.Images.SetKeyName(49, "VSObject_Exception_Protected.bmp");
-			this._ImageList.Images.SetKeyName(50, "VSObject_Exception_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(51, "VSObject_ExceptionPrivate.bmp");
-			this._ImageList.Images.SetKeyName(52, "VSObject_Field.bmp");
-			this._ImageList.Images.SetKeyName(53, "VSObject_Field_Friend.bmp");
-			this._ImageList.Images.SetKeyName(54, "VSObject_Field_Private.bmp");
-			this._ImageList.Images.SetKeyName(55, "VSObject_Field_Protected.bmp");
-			this._ImageList.Images.SetKeyName(56, "VSObject_Field_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(57, "VSObject_Field_Static.bmp");
-			this._ImageList.Images.SetKeyName(58, "VSObject_Field_Static_Friend.bmp");
-			this._ImageList.Images.SetKeyName(59, "VSObject_Field_Static_Private.bmp");
-			this._ImageList.Images.SetKeyName(60, "VSObject_Field_Static_Protected.bmp");
-			this._ImageList.Images.SetKeyName(61, "VSObject_Field_Static_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(62, "VSObject_File.bmp");
-			this._ImageList.Images.SetKeyName(63, "VSObject_Friend.bmp");
-			this._ImageList.Images.SetKeyName(64, "VSObject_Interface.bmp");
-			this._ImageList.Images.SetKeyName(65, "VSObject_Interface_Friend.bmp");
-			this._ImageList.Images.SetKeyName(66, "VSObject_Interface_Private.bmp");
-			this._ImageList.Images.SetKeyName(67, "VSObject_Interface_Protected.bmp");
-			this._ImageList.Images.SetKeyName(68, "VSObject_Interface_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(69, "VSObject_Method.bmp");
-			this._ImageList.Images.SetKeyName(70, "VSObject_Method_Friend.bmp");
-			this._ImageList.Images.SetKeyName(71, "VSObject_Method_Private.bmp");
-			this._ImageList.Images.SetKeyName(72, "VSObject_Method_Protected.bmp");
-			this._ImageList.Images.SetKeyName(73, "VSObject_Method_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(74, "VSObject_Method_Static.bmp");
-			this._ImageList.Images.SetKeyName(75, "VSObject_Method_Static_Friend.bmp");
-			this._ImageList.Images.SetKeyName(76, "VSObject_Method_Static_Private.bmp");
-			this._ImageList.Images.SetKeyName(77, "VSObject_Method_Static_Protected.bmp");
-			this._ImageList.Images.SetKeyName(78, "VSObject_Method_Static_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(79, "VSObject_MethodOverload.bmp");
-			this._ImageList.Images.SetKeyName(80, "VSObject_MethodOverload_Friend.bmp");
-			this._ImageList.Images.SetKeyName(81, "VSObject_MethodOverload_Private.bmp");
-			this._ImageList.Images.SetKeyName(82, "VSObject_MethodOverload_Protected.bmp");
-			this._ImageList.Images.SetKeyName(83, "VSObject_MethodOverload_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(84, "VSObject_MethodOverload_Static.bmp");
-			this._ImageList.Images.SetKeyName(85, "VSObject_MethodOverload_Static_Friend.bmp");
-			this._ImageList.Images.SetKeyName(86, "VSObject_MethodOverload_Static_Private.bmp");
-			this._ImageList.Images.SetKeyName(87, "VSObject_MethodOverload_Static_Protected.bmp");
-			this._ImageList.Images.SetKeyName(88, "VSObject_MethodOverload_Static_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(89, "VSObject_Module.bmp");
-			this._ImageList.Images.SetKeyName(90, "VSObject_Module_Friend.bmp");
-			this._ImageList.Images.SetKeyName(91, "VSObject_Module_Private.bmp");
-			this._ImageList.Images.SetKeyName(92, "VSObject_Module_Protected.bmp");
-			this._ImageList.Images.SetKeyName(93, "VSObject_Module_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(94, "VSObject_Namespace.bmp");
-			this._ImageList.Images.SetKeyName(95, "VSObject_Operator.bmp");
-			this._ImageList.Images.SetKeyName(96, "VSObject_Operator_Friend.bmp");
-			this._ImageList.Images.SetKeyName(97, "VSObject_Operator_Private.bmp");
-			this._ImageList.Images.SetKeyName(98, "VSObject_Operator_Protected.bmp");
-			this._ImageList.Images.SetKeyName(99, "VSObject_Operator_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(100, "VSObject_Private.bmp");
-			this._ImageList.Images.SetKeyName(101, "VSObject_Properties.bmp");
-			this._ImageList.Images.SetKeyName(102, "VSObject_Properties_Friend.bmp");
-			this._ImageList.Images.SetKeyName(103, "VSObject_Properties_Private.bmp");
-			this._ImageList.Images.SetKeyName(104, "VSObject_Properties_Protected.bmp");
-			this._ImageList.Images.SetKeyName(105, "VSObject_Properties_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(106, "VSObject_Properties_Static.bmp");
-			this._ImageList.Images.SetKeyName(107, "VSObject_Properties_Static_Friend.bmp");
-			this._ImageList.Images.SetKeyName(108, "VSObject_Properties_Static_Private.bmp");
-			this._ImageList.Images.SetKeyName(109, "VSObject_Properties_Static_Protected.bmp");
-			this._ImageList.Images.SetKeyName(110, "VSObject_Properties_Static_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(111, "VSObject_References.bmp");
-			this._ImageList.Images.SetKeyName(112, "VSObject_Structure.bmp");
-			this._ImageList.Images.SetKeyName(113, "VSObject_Structure_Friend.bmp");
-			this._ImageList.Images.SetKeyName(114, "VSObject_Structure_Private.bmp");
-			this._ImageList.Images.SetKeyName(115, "VSObject_Structure_Protected.bmp");
-			this._ImageList.Images.SetKeyName(116, "VSObject_Structure_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(117, "VSObject_Type.bmp");
-			this._ImageList.Images.SetKeyName(118, "VSObject_Type_Friend.bmp");
-			this._ImageList.Images.SetKeyName(119, "VSObject_Type_Private.bmp");
-			this._ImageList.Images.SetKeyName(120, "VSObject_Type_Protected.bmp");
-			this._ImageList.Images.SetKeyName(121, "VSObject_Type_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(122, "VSObject_TypeDef.bmp");
-			this._ImageList.Images.SetKeyName(123, "VSObject_TypeDef_Friend.bmp");
-			this._ImageList.Images.SetKeyName(124, "VSObject_TypeDef_Private.bmp");
-			this._ImageList.Images.SetKeyName(125, "VSObject_TypeDef_Protected.bmp");
-			this._ImageList.Images.SetKeyName(126, "VSObject_TypeDef_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(127, "VSObject_Union.bmp");
-			this._ImageList.Images.SetKeyName(128, "VSObject_Union_Friend.bmp");
-			this._ImageList.Images.SetKeyName(129, "VSObject_Union_Protected.bmp");
-			this._ImageList.Images.SetKeyName(130, "VSObject_Union_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(131, "VSObject_UnionPrivate.bmp");
-			this._ImageList.Images.SetKeyName(132, "VSObject_ValueType.bmp");
-			this._ImageList.Images.SetKeyName(133, "VSObject_ValueType_Friend.bmp");
-			this._ImageList.Images.SetKeyName(134, "VSObject_ValueType_Protected.bmp");
-			this._ImageList.Images.SetKeyName(135, "VSObject_ValueType_Sealed.bmp");
-			this._ImageList.Images.SetKeyName(136, "VSObject_ValueTypePrivate.bmp");
-			this._ImageList.Images.SetKeyName(137, "VSObject_Reference.bmp");
-			this._ImageList.Images.SetKeyName(138, "VSObject_Type_Base.bmp");
-			this._ImageList.Images.SetKeyName(139, "VSObject_Type_Derived.bmp");
 			// 
 			// _BrowserObject
 			// 
@@ -373,7 +224,7 @@
 			// 
 			// _MenuItemOpen
 			// 
-			this._MenuItemOpen.Image = global::Monoflector.Windows.Resources.Png.open;
+			this._MenuItemOpen.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemOpen.Image")));
 			this._MenuItemOpen.Name = "_MenuItemOpen";
 			this._MenuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this._MenuItemOpen.Size = new System.Drawing.Size(243, 22);
@@ -381,7 +232,7 @@
 			// 
 			// _MenuItemOpenGac
 			// 
-			this._MenuItemOpenGac.Image = global::Monoflector.Windows.Resources.Png.open_gac;
+			this._MenuItemOpenGac.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemOpenGac.Image")));
 			this._MenuItemOpenGac.Name = "_MenuItemOpenGac";
 			this._MenuItemOpenGac.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
 									| System.Windows.Forms.Keys.O)));
@@ -395,7 +246,7 @@
 			// 
 			// _MenuItemBookmark
 			// 
-			this._MenuItemBookmark.Image = global::Monoflector.Windows.Resources.Png.bookmark_add;
+			this._MenuItemBookmark.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemBookmark.Image")));
 			this._MenuItemBookmark.Name = "_MenuItemBookmark";
 			this._MenuItemBookmark.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._MenuItemBookmark.Size = new System.Drawing.Size(243, 22);
@@ -403,7 +254,7 @@
 			// 
 			// _MenuItemBookmarkRemove
 			// 
-			this._MenuItemBookmarkRemove.Image = global::Monoflector.Windows.Resources.Png.bookmark_remove;
+			this._MenuItemBookmarkRemove.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemBookmarkRemove.Image")));
 			this._MenuItemBookmarkRemove.Name = "_MenuItemBookmarkRemove";
 			this._MenuItemBookmarkRemove.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._MenuItemBookmarkRemove.Size = new System.Drawing.Size(243, 22);
@@ -412,7 +263,7 @@
 			// 
 			// _MenuItemClose
 			// 
-			this._MenuItemClose.Image = global::Monoflector.Windows.Resources.Png.close;
+			this._MenuItemClose.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemClose.Image")));
 			this._MenuItemClose.Name = "_MenuItemClose";
 			this._MenuItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
 			this._MenuItemClose.Size = new System.Drawing.Size(243, 22);
@@ -464,43 +315,43 @@
 			// 
 			// _MenuItemBookmarks
 			// 
-			this._MenuItemBookmarks.Image = global::Monoflector.Windows.Resources.Png.bookmarks;
+			this._MenuItemBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemBookmarks.Image")));
 			this._MenuItemBookmarks.Name = "_MenuItemBookmarks";
-			this._MenuItemBookmarks.Size = new System.Drawing.Size(152, 22);
+			this._MenuItemBookmarks.Size = new System.Drawing.Size(135, 22);
 			this._MenuItemBookmarks.Text = "&Bookmarks";
 			// 
 			// _MenuItemSearch
 			// 
-			this._MenuItemSearch.Image = global::Monoflector.Windows.Resources.Png.search;
+			this._MenuItemSearch.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemSearch.Image")));
 			this._MenuItemSearch.Name = "_MenuItemSearch";
 			this._MenuItemSearch.ShortcutKeys = System.Windows.Forms.Keys.F3;
-			this._MenuItemSearch.Size = new System.Drawing.Size(152, 22);
+			this._MenuItemSearch.Size = new System.Drawing.Size(135, 22);
 			this._MenuItemSearch.Text = "&Search";
 			// 
 			// _MenuItemDecompiler
 			// 
-			this._MenuItemDecompiler.Image = global::Monoflector.Windows.Resources.Png.decompile;
+			this._MenuItemDecompiler.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemDecompiler.Image")));
 			this._MenuItemDecompiler.Name = "_MenuItemDecompiler";
-			this._MenuItemDecompiler.Size = new System.Drawing.Size(152, 22);
+			this._MenuItemDecompiler.Size = new System.Drawing.Size(135, 22);
 			this._MenuItemDecompiler.Text = "&Decompiler";
 			// 
 			// _MenuItemAnalyzer
 			// 
-			this._MenuItemAnalyzer.Image = global::Monoflector.Windows.Resources.Png.analyze;
+			this._MenuItemAnalyzer.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemAnalyzer.Image")));
 			this._MenuItemAnalyzer.Name = "_MenuItemAnalyzer";
-			this._MenuItemAnalyzer.Size = new System.Drawing.Size(152, 22);
+			this._MenuItemAnalyzer.Size = new System.Drawing.Size(135, 22);
 			this._MenuItemAnalyzer.Text = "&Analyzer";
 			// 
 			// toolStripMenuItem7
 			// 
 			this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-			this.toolStripMenuItem7.Size = new System.Drawing.Size(149, 6);
+			this.toolStripMenuItem7.Size = new System.Drawing.Size(132, 6);
 			// 
 			// _MenuItemPrefs
 			// 
-			this._MenuItemPrefs.Image = global::Monoflector.Windows.Resources.Png.preferences;
+			this._MenuItemPrefs.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemPrefs.Image")));
 			this._MenuItemPrefs.Name = "_MenuItemPrefs";
-			this._MenuItemPrefs.Size = new System.Drawing.Size(152, 22);
+			this._MenuItemPrefs.Size = new System.Drawing.Size(135, 22);
 			this._MenuItemPrefs.Text = "&Preferences";
 			// 
 			// _MenuHelp
@@ -513,7 +364,7 @@
 			// 
 			// _MenuItemHelpDummy
 			// 
-			this._MenuItemHelpDummy.Image = global::Monoflector.Windows.Resources.Png.help;
+			this._MenuItemHelpDummy.Image = ((System.Drawing.Image)(resources.GetObject("_MenuItemHelpDummy.Image")));
 			this._MenuItemHelpDummy.Name = "_MenuItemHelpDummy";
 			this._MenuItemHelpDummy.Size = new System.Drawing.Size(147, 22);
 			this._MenuItemHelpDummy.Text = "Dummy Entry";
@@ -545,14 +396,14 @@
 			this._ButtonOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._ButtonItemOpen,
             this._ButtonItemOpenGac});
-			this._ButtonOpen.Image = global::Monoflector.Windows.Resources.Png.open;
+			this._ButtonOpen.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonOpen.Image")));
 			this._ButtonOpen.Name = "_ButtonOpen";
 			this._ButtonOpen.Size = new System.Drawing.Size(32, 22);
 			this._ButtonOpen.Text = "Open...";
 			// 
 			// _ButtonItemOpen
 			// 
-			this._ButtonItemOpen.Image = global::Monoflector.Windows.Resources.Png.open;
+			this._ButtonItemOpen.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonItemOpen.Image")));
 			this._ButtonItemOpen.Name = "_ButtonItemOpen";
 			this._ButtonItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this._ButtonItemOpen.Size = new System.Drawing.Size(243, 22);
@@ -560,7 +411,7 @@
 			// 
 			// _ButtonItemOpenGac
 			// 
-			this._ButtonItemOpenGac.Image = global::Monoflector.Windows.Resources.Png.open_gac;
+			this._ButtonItemOpenGac.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonItemOpenGac.Image")));
 			this._ButtonItemOpenGac.Name = "_ButtonItemOpenGac";
 			this._ButtonItemOpenGac.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift)
 									| System.Windows.Forms.Keys.O)));
@@ -575,7 +426,7 @@
 			// _ButtonBack
 			// 
 			this._ButtonBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonBack.Image = global::Monoflector.Windows.Resources.Png.back;
+			this._ButtonBack.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonBack.Image")));
 			this._ButtonBack.Name = "_ButtonBack";
 			this._ButtonBack.Size = new System.Drawing.Size(23, 22);
 			this._ButtonBack.Text = "Back";
@@ -583,7 +434,7 @@
 			// _ButtonForward
 			// 
 			this._ButtonForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonForward.Image = global::Monoflector.Windows.Resources.Png.forward;
+			this._ButtonForward.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonForward.Image")));
 			this._ButtonForward.Name = "_ButtonForward";
 			this._ButtonForward.Size = new System.Drawing.Size(23, 22);
 			this._ButtonForward.Text = "Forward";
@@ -596,7 +447,7 @@
 			// _ButtonRefresh
 			// 
 			this._ButtonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonRefresh.Image = global::Monoflector.Windows.Resources.Png.refresh;
+			this._ButtonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonRefresh.Image")));
 			this._ButtonRefresh.Name = "_ButtonRefresh";
 			this._ButtonRefresh.Size = new System.Drawing.Size(23, 22);
 			this._ButtonRefresh.Text = "Refresh";
@@ -609,7 +460,7 @@
 			// _ButtonBookmarks
 			// 
 			this._ButtonBookmarks.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonBookmarks.Image = global::Monoflector.Windows.Resources.Png.bookmarks;
+			this._ButtonBookmarks.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonBookmarks.Image")));
 			this._ButtonBookmarks.Name = "_ButtonBookmarks";
 			this._ButtonBookmarks.Size = new System.Drawing.Size(23, 22);
 			this._ButtonBookmarks.Text = "Bookmarks";
@@ -623,7 +474,7 @@
 			// _ButtonSearch
 			// 
 			this._ButtonSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this._ButtonSearch.Image = global::Monoflector.Windows.Resources.Png.search;
+			this._ButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("_ButtonSearch.Image")));
 			this._ButtonSearch.Name = "_ButtonSearch";
 			this._ButtonSearch.Size = new System.Drawing.Size(23, 22);
 			this._ButtonSearch.Text = "Search";
@@ -712,7 +563,7 @@
 			// 
 			// _PopItemBookmarkAdd
 			// 
-			this._PopItemBookmarkAdd.Image = global::Monoflector.Windows.Resources.Png.bookmark_add;
+			this._PopItemBookmarkAdd.Image = ((System.Drawing.Image)(resources.GetObject("_PopItemBookmarkAdd.Image")));
 			this._PopItemBookmarkAdd.Name = "_PopItemBookmarkAdd";
 			this._PopItemBookmarkAdd.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._PopItemBookmarkAdd.Size = new System.Drawing.Size(224, 22);
@@ -720,7 +571,7 @@
 			// 
 			// _PopItemBookmarkRemove
 			// 
-			this._PopItemBookmarkRemove.Image = global::Monoflector.Windows.Resources.Png.bookmark_remove;
+			this._PopItemBookmarkRemove.Image = ((System.Drawing.Image)(resources.GetObject("_PopItemBookmarkRemove.Image")));
 			this._PopItemBookmarkRemove.Name = "_PopItemBookmarkRemove";
 			this._PopItemBookmarkRemove.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this._PopItemBookmarkRemove.Size = new System.Drawing.Size(224, 22);
@@ -754,7 +605,7 @@
 			// 
 			// _PopItemClose
 			// 
-			this._PopItemClose.Image = global::Monoflector.Windows.Resources.Png.close;
+			this._PopItemClose.Image = ((System.Drawing.Image)(resources.GetObject("_PopItemClose.Image")));
 			this._PopItemClose.Name = "_PopItemClose";
 			this._PopItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
 			this._PopItemClose.Size = new System.Drawing.Size(224, 22);
@@ -788,7 +639,7 @@
 			this.ClientSize = new System.Drawing.Size(517, 597);
 			this.Controls.Add(this._Container);
 			this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Icon = global::Monoflector.Windows.Resources.Icons.monoflector;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this._MenuStrip;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "Main";
@@ -878,7 +729,6 @@
 		private System.Windows.Forms.ToolStripMenuItem _PopItemBaseType;
 		private System.Windows.Forms.ToolStripMenuItem _PopItemFieldType;
 		private System.Windows.Forms.ToolStripMenuItem _PopItemPropertyType;
-		private System.Windows.Forms.ImageList _ImageList;
 		private System.Windows.Forms.SplitContainer _SplitContainerLeft;
 
 	}

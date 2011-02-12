@@ -16,17 +16,22 @@ using Monoflector.Windows.Controls.Panels;
 namespace Monoflector.Forms {
 	public partial class Main : Form {
 
+		internal const int foo = 8;
+
 		private SplitterPanel _Dock;
 		private Bookmarks _Bookmarks;
 		private Decompiler _Decompiler;
 		private Search _Search;
+		private BitmapList _BitmapList;
 
 		public Main() {
 			InitializeComponent();
 
+			_BitmapList = new BitmapList();
 			_Dock = _SplitContainer.Panel2;
 			_ComboLanguage.SelectedIndex = 0;
 
+			this._Tree.ImageList = _BitmapList.ImageList;
 			this._SplitContainer.FixedPanel = FixedPanel.Panel1;
 
 			InitPanels();

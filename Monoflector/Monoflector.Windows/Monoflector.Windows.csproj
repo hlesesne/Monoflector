@@ -71,6 +71,7 @@
     <Compile Include="Controls\Nodes\AssemblyTreeNode.cs" />
     <Compile Include="Controls\Nodes\CecilNode.cs" />
     <Compile Include="Controls\Nodes\ConstructorNode.cs" />
+    <Compile Include="Controls\Nodes\ConstantNode.cs" />
     <Compile Include="Controls\Nodes\DerivedNode.cs" />
     <Compile Include="Controls\Nodes\EventNode.cs" />
     <Compile Include="Controls\Nodes\FieldNode.cs" />
@@ -103,6 +104,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BitmapList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\BitmapList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BitmapList.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Bitmaps.cs" />
     <Compile Include="Resources\Icons.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -123,12 +132,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\BitmapList.resx">
+      <DependentUpon>BitmapList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\XPTabControl.resx">
       <DependentUpon>XPTabControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BitmapList.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BitmapList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Icons.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

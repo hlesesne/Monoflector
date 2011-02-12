@@ -33,6 +33,14 @@ namespace Monoflector.Windows.Resources {
 			public const int Sealed = 5;
 		}
 
+		public class Constant : Category {
+			public const int Default = 6;
+			public const int Internal = 7;
+			public const int Private = 8;
+			public const int Protected = 9;
+			public const int Sealed = 10;
+		}
+
 		public class Constrcutor : Category {
 			public const int Default = 11;
 			public const int Internal = 12;

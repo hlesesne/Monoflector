@@ -10,7 +10,7 @@ namespace Monoflector.Languages
     /// <summary>
     /// Represents the text/plain formatter.
     /// </summary>
-    public class TextPlainFormatterHook : IFormatterHook
+    public class TextPlainFormatterHook : FormatterBase, IFormatterHook
     {
         /// <summary>
         /// Gets the name of the hook.
@@ -64,135 +64,27 @@ namespace Monoflector.Languages
             return _writer.ToString();
         }
 
-        /// <summary>
-        /// Writes the indent.
-        /// </summary>
-        void WriteIndent()
+        protected override void OnWriteIndent(int indent)
         {
-            if (!_writeIndent)
-                return;
-
-            for (int i = 0; i < _indent; i++)
-                _writer.Write("  ");
+            for (var i = 0; i < indent; i++)
+            {
+                WriteRaw("  ");
+            }
         }
 
-        /// <summary>
-        /// Writes a raw string to the code output.
-        /// </summary>
-        /// <param name="str">The raw string.</param>
-        public void Write(string str)
+        protected override void OnWriteRaw(string value)
         {
-            WriteIndent();
-            _writer.Write(str);
-            _writeIndent = false;
+            _writer.Write(value);
         }
 
-        /// <summary>
-        /// Writes a line to the code output.
-        /// </summary>
-        public void WriteLine()
+        protected override void OnWriteLine()
         {
             _writer.WriteLine();
-            _writeIndent = true;
         }
 
-        /// <summary>
-        /// Writes the space.
-        /// </summary>
-        public void WriteSpace()
+        protected override void OnWriteSpace()
         {
-            Write(" ");
-        }
-
-        /// <summary>
-        /// Writes a token to the code output.
-        /// </summary>
-        /// <param name="token">The token.</param>
-        public void WriteToken(string token)
-        {
-            Write(token);
-        }
-
-        /// <summary>
-        /// Writes a comment to the code output.
-        /// </summary>
-        /// <param name="comment">The comment.</param>
-        public void WriteComment(string comment)
-        {
-            Write(comment);
-            WriteLine();
-        }
-
-        /// <summary>
-        /// Writes a keyword to the code output.
-        /// </summary>
-        /// <param name="keyword">The keyword.</param>
-        public void WriteKeyword(string keyword)
-        {
-            Write(keyword);
-        }
-
-        /// <summary>
-        /// Writes a literal to the code output.
-        /// </summary>
-        /// <param name="literal">The literal.</param>
-        public void WriteLiteral(string literal)
-        {
-            Write(literal);
-        }
-
-        /// <summary>
-        /// Writes a definition to the code output.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="definition">The definition.</param>
-        public void WriteDefinition(string value, object definition)
-        {
-            Write(value);
-        }
-
-        /// <summary>
-        /// Writes a reference to the code output.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="reference">The reference.</param>
-        public void WriteReference(string value, object reference)
-        {
-            Write(value);
-        }
-
-        /// <summary>
-        /// Writes an identifier to the code output.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="identifier">The identifier.</param>
-        public void WriteIdentifier(string value, object identifier)
-        {
-            Write(value);
-        }
-
-        /// <summary>
-        /// Indents the code output.
-        /// </summary>
-        public void Indent()
-        {
-            _indent++;
-        }
-
-        /// <summary>
-        /// Outdents the code output.
-        /// </summary>
-        public void Outdent()
-        {
-            _indent--;
-        }
-
-        /// <summary>
-        /// Completes the decompilation operation.
-        /// </summary>
-        public void Complete()
-        {
-            _writer.Flush();
+            _writer.Write(" ");
         }
     }
 }

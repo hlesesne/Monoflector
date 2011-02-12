@@ -89,18 +89,24 @@ namespace Monoflector.Windows.Controls.Nodes {
 
 		public static int GetIcon(FieldDefinition field, Type categoryType) {
 
-			Bitmaps.CategoryMember which = field.IsStatic ?
-				Bitmaps.CategoryMember.Static :
-				Bitmaps.CategoryMember.Default;
+			Bitmaps.CategoryMember which = field.HasConstant ? 
+				Bitmaps.CategoryMember.Default :
+				field.IsStatic ? Bitmaps.CategoryMember.Static : Bitmaps.CategoryMember.Default;
 
 			if (field.IsPrivate) {
-				which = field.IsStatic ? Bitmaps.CategoryMember.StaticPrivate : Bitmaps.CategoryMember.Private;
+				which = field.HasConstant ? 
+					Bitmaps.CategoryMember.Private : 
+					field.IsStatic ? Bitmaps.CategoryMember.StaticPrivate : Bitmaps.CategoryMember.Private;
 			}
 			else if (field.IsAssembly) {
-				which = field.IsStatic ? Bitmaps.CategoryMember.StaticInternal : Bitmaps.CategoryMember.Internal;
+				which = field.HasConstant ? 
+					Bitmaps.CategoryMember.Internal : 
+					field.IsStatic ? Bitmaps.CategoryMember.StaticInternal : Bitmaps.CategoryMember.Internal;
 			}
 			else if (field.IsFamily || field.IsFamilyAndAssembly || (field.IsFamilyOrAssembly && field.IsFamily)) {
-				which = field.IsStatic ? Bitmaps.CategoryMember.StaticProtected : Bitmaps.CategoryMember.Protected;
+				which = field.HasConstant ? 
+					Bitmaps.CategoryMember.Protected : 
+					field.IsStatic ? Bitmaps.CategoryMember.StaticProtected : Bitmaps.CategoryMember.Protected;
 			}
 
 			FieldInfo fieldInfo = categoryType.GetField(which.ToString(), BindingFlags.Public | BindingFlags.Static);

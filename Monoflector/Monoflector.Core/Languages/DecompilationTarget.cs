@@ -18,7 +18,7 @@ namespace Monoflector.Languages
         /// The language writer hooks.
         /// </summary>
         [ImportMany(typeof(IFormatterHook), AllowRecomposition = true)]
-        private IEnumerable<IFormatterHook> _hooks;
+        private IEnumerable<ExportFactory<IFormatterHook>> _hooks;
         private FormatterChain _chain;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Monoflector.Languages
         {
             _stringWriter = new StringWriter();
 
-            _chain = new FormatterChain(_hooks);
+            _chain = new FormatterChain(_hooks.Select(x => x.CreateExport().Value));
 
             LanguageWriter = _languageWriterCreator(_chain);
             if (LanguageWriter == null)

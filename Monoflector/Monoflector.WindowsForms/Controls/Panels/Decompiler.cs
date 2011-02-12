@@ -93,19 +93,17 @@ namespace Monoflector.Windows.Controls.Panels {
 		}
 
 		public override void OnDefinitionSelected(object definition) {
-			if (definition is MethodDefinition) {
 				
-				var def = definition as MethodDefinition;
-				var target = ApplicationContext.Instance.SelectedLanguage.CreateDecompilationTarget();
+			var def = definition as MethodDefinition;
+			var target = ApplicationContext.Instance.SelectedLanguage.CreateDecompilationTarget();
 				
-				try {
-					((ILanguageWriter)target).Write(def);
-				}
-				catch {
-				}
+			try {
+				((ILanguageWriter)target).Write(def);
+			}
+			catch {
+			}
 
-				_Browser.SetContent(target.ToString("text/plain"));
-			}			
+			_Browser.SetContent(target.ToString("text/html"));
 		}
 
 		public override void OnDefinitionDoubleClicked(object definition) {

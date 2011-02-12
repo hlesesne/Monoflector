@@ -104,7 +104,7 @@ namespace Monoflector.Windows.Controls.Panels {
 				catch {
 				}
 
-				_Browser.SetContent(target.ToString("text/plain"));
+				_Browser.SetContent(target.ToString("text/plain").Replace(Environment.NewLine, "<br />"));
 			}			
 		}
 

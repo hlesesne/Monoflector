@@ -57,125 +57,6 @@ namespace Monoflector.Languages
         }
 
         /// <summary>
-        /// Indents this instance.
-        /// </summary>
-        public void Indent()
-        {
-            foreach (var hook in _formatters.Values)
-                hook.Indent();
-        }
-
-        /// <summary>
-        /// Outdents this instance.
-        /// </summary>
-        public void Outdent()
-        {
-            foreach (var hook in _formatters.Values)
-                hook.Outdent();
-        }
-
-        /// <summary>
-        /// Writes the specified string.
-        /// </summary>
-        /// <param name="str">The string.</param>
-        public void Write(string str)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.Write(str);
-        }
-
-        /// <summary>
-        /// Writes the specified comment.
-        /// </summary>
-        /// <param name="comment">The specified comment.</param>
-        public void WriteComment(string comment)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteComment(comment);
-        }
-
-        /// <summary>
-        /// Writes the specified definition.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="definition">The definition.</param>
-        public void WriteDefinition(string value, object definition)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteDefinition(value, definition);
-        }
-
-        /// <summary>
-        /// Writes the specified identifier.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="identifier">The identifier.</param>
-        public void WriteIdentifier(string value, object identifier)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteDefinition(value, identifier);
-        }
-
-        /// <summary>
-        /// Writes the specified keyword.
-        /// </summary>
-        /// <param name="keyword">The keyword.</param>
-        public void WriteKeyword(string keyword)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteKeyword(keyword);
-        }
-
-        /// <summary>
-        /// Writes a new line.
-        /// </summary>
-        public void WriteLine()
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteLine();
-        }
-
-        /// <summary>
-        /// Writes the specified literal.
-        /// </summary>
-        /// <param name="literal">The literal.</param>
-        public void WriteLiteral(string literal)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteLiteral(literal);
-        }
-
-        /// <summary>
-        /// Writes the specified reference.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="reference">The reference.</param>
-        public void WriteReference(string value, object reference)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteReference(value, reference);
-        }
-
-        /// <summary>
-        /// Writes a space.
-        /// </summary>
-        public void WriteSpace()
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteSpace();
-        }
-
-        /// <summary>
-        /// Writes the specified token.
-        /// </summary>
-        /// <param name="token">The token.</param>
-        public void WriteToken(string token)
-        {
-            foreach (var hook in _formatters.Values)
-                hook.WriteToken(token);
-        }
-
-        /// <summary>
         /// Returns a <see cref="System.String"/> that represents this instance.
         /// </summary>
         /// <param name="contentType">The desired MIME content-type.</param>
@@ -189,5 +70,163 @@ namespace Monoflector.Languages
                 return tmp.ToString();
             return null;
         }
+
+        #region Interface delegation
+        public void Indent()
+        {
+            foreach (var hook in _formatters.Values)
+                hook.Indent();
+        }
+
+        public void Outdent()
+        {
+            foreach (var hook in _formatters.Values)
+                hook.Outdent();
+        }
+
+        public void WriteAliasTypeKeyword(string keyword, Mono.Cecil.TypeReference type)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteAliasTypeKeyword(keyword, type);
+        }
+
+        public void WriteBlockEnd(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteBlockEnd(value);
+        }
+
+        public void WriteBlockStart(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteBlockStart(value);
+        }
+
+        public void WriteComment(string comment)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteComment(comment);
+        }
+
+        public void WriteDocComment(string comment)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteDocComment(comment);
+        }
+
+        public void WriteGenericToken(string name)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteGenericToken(name);
+        }
+
+        public void WriteKeyword(string keyword)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteKeyword(keyword);
+        }
+
+        public void WriteLabelReference(string name)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteLabelReference(name);
+        }
+
+        public void WriteLine()
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteLine();
+        }
+
+        public void WriteLiteralChar(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteLiteralChar(value);
+        }
+
+        public void WriteLiteralNumber(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteLiteralNumber(value);
+        }
+
+        public void WriteLiteralString(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteLiteralString(value);
+        }
+
+        public void WriteMultilineComment(string comment)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteMultilineComment(comment);
+        }
+
+        public void WriteNameReference(string name, Mono.Cecil.MemberReference member)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteNameReference(name, member);
+        }
+
+        public void WriteNamedLiteral(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteNamedLiteral(value);
+        }
+
+        public void WriteOperator(string name)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteOperator(name);
+        }
+
+        public void WriteOperatorWord(string name)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteOperatorWord(name);
+        }
+
+        public void WriteParameterName(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteParameterName(value);
+        }
+
+        public void WriteParenthesisClose(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteParenthesisClose(value);
+        }
+
+        public void WriteParenthesisOpen(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteParenthesisOpen(value);
+        }
+
+        public void WritePrepocComment(string comment)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WritePrepocComment(comment);
+        }
+
+        public void WriteRaw(string value)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteRaw(value);
+        }
+
+        public void WriteSpace()
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteSpace();
+        }
+
+        public void WriteVariableReference(string name)
+        {
+            foreach (var hook in _formatters.Values)
+                hook.WriteVariableReference(name);
+        } 
+        #endregion
     }
 }

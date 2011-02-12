@@ -114,11 +114,16 @@ namespace Monoflector.Windows.Controls.Nodes {
 				this.Nodes.Add(node);
 			}
 
-			foreach (var field in type.Fields.OrderBy(o => o.Name)) {
-				FieldNode node = new FieldNode(field);
+			foreach (var constant in type.Fields.Where(o => o.HasConstant).OrderBy(o => o.Name)) {
+				ConstantNode node = new ConstantNode(constant);
 				this.Nodes.Add(node);
 			}
 
+			foreach (var field in type.Fields.Where(o => !o.HasConstant).OrderBy(o => o.Name)) {
+				FieldNode node = new FieldNode(field);
+				this.Nodes.Add(node);
+			}
+			
 		}
 
 		private void AddBaseTypes(Boolean baseTypesAsMembers) {

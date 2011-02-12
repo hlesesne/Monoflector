@@ -42,10 +42,6 @@ namespace Monoflector.WindowsForms.Forms {
 			_Tree.AddAssembly(asm);
 			_Tree.EndUpdate();
 
-			_Tree.DefinitionSelected += _Tree_DefinitionSelected;
-			_Tree.DefinitionDoubleClicked += _Tree_DefinitionDoubleClicked;
-			_Tree.NodeMouseClick += _Tree_NodeMouseClick;
-
 			_MenuItemBookmarks.Click += ToggleBookmarks;
 			_ButtonBookmarks.Click += ToggleBookmarks;
 
@@ -60,6 +56,15 @@ namespace Monoflector.WindowsForms.Forms {
 
 				// TODO - make sure the search panel is open and run a search.
 			};
+		}
+
+		protected override void OnLoad(EventArgs e) {
+			base.OnLoad(e);
+
+			_Tree.DefinitionSelected += _Tree_DefinitionSelected;
+			_Tree.DefinitionDoubleClicked += _Tree_DefinitionDoubleClicked;
+			_Tree.NodeMouseClick += _Tree_NodeMouseClick;
+
 		}
 
 		protected override void OnSizeChanged(EventArgs e) {

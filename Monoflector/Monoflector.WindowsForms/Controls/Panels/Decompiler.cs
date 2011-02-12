@@ -93,12 +93,12 @@ namespace Monoflector.WindowsForms.Controls.Panels {
 		}
 
 		public override void OnDefinitionSelected(object definition) {
-				
-			var def = definition as MethodDefinition;
+
+			//var def = definition as MethodDefinition;
 			var target = ApplicationContext.Instance.SelectedLanguage.CreateDecompilationTarget();
 				
 			try {
-				((ILanguageWriter)target).Write(def);
+				((ILanguageWriter)target).Write(definition);
 			}
 			catch {
 			}

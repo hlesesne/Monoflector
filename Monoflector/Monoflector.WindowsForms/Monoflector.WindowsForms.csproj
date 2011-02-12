@@ -216,6 +216,10 @@
       <Name>Monoflector.Core</Name>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\Monoflector.Windows.WindowsForms.Common\Monoflector.WindowsForms.Common.csproj">
+      <Project>{DE76BF7D-9A0E-4624-B16D-8093C0F0C967}</Project>
+      <Name>Monoflector.WindowsForms.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Monoflector.Windows\Monoflector.Windows.csproj">
       <Project>{18CAFCD6-9648-4A8A-9069-E07A620EF576}</Project>
       <Name>Monoflector.Windows</Name>

@@ -7,10 +7,10 @@ using System.Text;
 
 using Mono.Cecil;
 
-using Monoflector.Windows.Controls;
-using Monoflector.Windows.Controls.Panels;
+using Monoflector.WindowsForms.Controls;
+using Monoflector.WindowsForms.Controls.Panels;
 
-namespace Monoflector.Windows.Controls.Panels {
+namespace Monoflector.WindowsForms.Controls.Panels {
 	public class Decompiler : DockPanel {
 		private XPTabControl _Tabs;
 		private System.Windows.Forms.TabPage _TabHtml;
@@ -26,9 +26,9 @@ namespace Monoflector.Windows.Controls.Panels {
 		}
 
 		private void InitializeComponent() {
-			this._Tabs = new Monoflector.Windows.Controls.XPTabControl();
+			this._Tabs = new Monoflector.WindowsForms.Controls.XPTabControl();
 			this._TabHtml = new System.Windows.Forms.TabPage();
-			this._Browser = new Monoflector.Windows.Controls.CodeBrowser();
+			this._Browser = new Monoflector.WindowsForms.Controls.CodeBrowser();
 			this._TabIL = new System.Windows.Forms.TabPage();
 			this._Content.SuspendLayout();
 			this._Tabs.SuspendLayout();
@@ -102,8 +102,13 @@ namespace Monoflector.Windows.Controls.Panels {
 			}
 			catch {
 			}
+			String content = target.ToString("text/html");
 
-			_Browser.SetContent(target.ToString("text/html"));
+			if (String.IsNullOrEmpty(content)) {
+				content = "The decompiler was unable to generate source code for the requested object.";
+			}
+
+			_Browser.SetContent(content);
 		}
 
 		public override void OnDefinitionDoubleClicked(object definition) {

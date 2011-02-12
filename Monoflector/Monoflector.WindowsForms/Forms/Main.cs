@@ -10,10 +10,10 @@ using System.Windows.Forms.VisualStyles;
 
 using Mono.Cecil;
 
-using Monoflector.Windows.Controls;
-using Monoflector.Windows.Controls.Panels;
+using Monoflector.WindowsForms.Controls;
+using Monoflector.WindowsForms.Controls.Panels;
 
-namespace Monoflector.Forms {
+namespace Monoflector.WindowsForms.Forms {
 	public partial class Main : Form {
 
 		internal const int foo = 8;

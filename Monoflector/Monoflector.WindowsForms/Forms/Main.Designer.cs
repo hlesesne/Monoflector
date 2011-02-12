@@ -1,4 +1,4 @@
-﻿namespace Monoflector.Forms {
+﻿namespace Monoflector.WindowsForms.Forms {
 	partial class Main {
 		/// <summary>
 		/// Required designer variable.
@@ -27,8 +27,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this._SplitContainer = new System.Windows.Forms.SplitContainer();
 			this._SplitContainerLeft = new System.Windows.Forms.SplitContainer();
-			this._Tree = new Monoflector.Windows.Controls.AssemblyTree();
-			this._BrowserObject = new Monoflector.Windows.Controls.CodeBrowser();
+			this._Tree = new Monoflector.WindowsForms.Controls.AssemblyTree();
+			this._BrowserObject = new Monoflector.WindowsForms.Controls.CodeBrowser();
 			this._Container = new System.Windows.Forms.ToolStripContainer();
 			this._Status = new System.Windows.Forms.StatusStrip();
 			this._MenuStrip = new System.Windows.Forms.MenuStrip();
@@ -670,8 +670,8 @@
 		#endregion
 
 		private System.Windows.Forms.SplitContainer _SplitContainer;
-		private Monoflector.Windows.Controls.AssemblyTree _Tree;
-		private Monoflector.Windows.Controls.CodeBrowser _BrowserObject;
+		private Monoflector.WindowsForms.Controls.AssemblyTree _Tree;
+		private Monoflector.WindowsForms.Controls.CodeBrowser _BrowserObject;
 		private System.Windows.Forms.ToolStripContainer _Container;
 		private System.Windows.Forms.StatusStrip _Status;
 		private System.Windows.Forms.ToolStrip _ButtonStrip;

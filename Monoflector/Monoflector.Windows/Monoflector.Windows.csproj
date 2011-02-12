@@ -48,9 +48,6 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,43 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AssemblyTree.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CodeBrowser.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Extensions.cs" />
-    <Compile Include="Controls\GDIMemoryContext.cs" />
-    <Compile Include="Controls\NativeMethods.cs" />
-    <Compile Include="Controls\Nodes\AssemblyNode.cs" />
-    <Compile Include="Controls\Nodes\AssemblyTreeNode.cs" />
-    <Compile Include="Controls\Nodes\CecilNode.cs" />
-    <Compile Include="Controls\Nodes\ConstructorNode.cs" />
-    <Compile Include="Controls\Nodes\ConstantNode.cs" />
-    <Compile Include="Controls\Nodes\DerivedNode.cs" />
-    <Compile Include="Controls\Nodes\EventNode.cs" />
-    <Compile Include="Controls\Nodes\FieldNode.cs" />
-    <Compile Include="Controls\Nodes\MemberNode.cs" />
-    <Compile Include="Controls\Nodes\MethodNode.cs" />
-    <Compile Include="Controls\Nodes\ModuleNode.cs" />
-    <Compile Include="Controls\Nodes\NamespaceNode.cs" />
-    <Compile Include="Controls\Nodes\PropertyNode.cs" />
-    <Compile Include="Controls\Nodes\ReferenceNode.cs" />
-    <Compile Include="Controls\Nodes\ReferencesNode.cs" />
-    <Compile Include="Controls\Nodes\TypeNode.cs" />
-    <Compile Include="Controls\Panels\DockPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Panels\DockPanelContent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\XPTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\XPTabControl.Designer.cs">
-      <DependentUpon>XPTabControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Gac.cs" />
     <Compile Include="GacAssembly.cs" />
     <Compile Include="GacAssemblyProvider.cs" />
@@ -103,25 +63,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\BitmapList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Resources\BitmapList.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BitmapList.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Bitmaps.cs" />
-    <Compile Include="Resources\Icons.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Icons.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Png.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Png.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -132,29 +73,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\BitmapList.resx">
-      <DependentUpon>BitmapList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\XPTabControl.resx">
-      <DependentUpon>XPTabControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\BitmapList.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>BitmapList.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Icons.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Png.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Png.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -164,181 +85,6 @@
     <Content Include="Manifest.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Bitmaps\VSObject_Assembly.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Class.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Class_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Class_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Class_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Class_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constant.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constant_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constant_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constant_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constant_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Static.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Static_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Static_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Static_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Constructor_Static_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Delegate.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Delegate_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Delegate_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Delegate_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Delegate_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Dummy.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Enum.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_EnumItem.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_EnumItem_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_EnumItem_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_EnumItem_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_EnumItem_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_EnumPrivate.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Enum_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Enum_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Enum_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Static.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Static_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Static_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Static_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Event_Static_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Exception.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_ExceptionPrivate.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Exception_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Exception_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Exception_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Static.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Static_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Static_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Static_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Field_Static_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_File.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Interface.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Interface_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Interface_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Interface_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Interface_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Static.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Static_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Static_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Static_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_MethodOverload_Static_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Static.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Static_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Static_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Static_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Method_Static_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Module.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Module_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Module_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Module_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Module_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Namespace.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Operator.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Operator_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Operator_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Operator_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Operator_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Static.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Static_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Static_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Static_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Properties_Static_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Reference.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_References.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Structure.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Structure_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Structure_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Structure_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Structure_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_TypeDef.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_TypeDef_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_TypeDef_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_TypeDef_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_TypeDef_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type_Base.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type_Derived.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type_Private.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Type_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Union.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_UnionPrivate.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Union_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Union_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_Union_Sealed.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_ValueType.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_ValueTypePrivate.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_ValueType_Friend.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_ValueType_Protected.bmp" />
-    <Content Include="Resources\Bitmaps\VSObject_ValueType_Sealed.bmp" />
-    <Content Include="Resources\Css\shCoreDefault.css" />
-    <Content Include="Resources\Icons\monoflector.ico" />
-    <Content Include="Resources\page.html" />
-    <Content Include="Resources\Png\analyze.png" />
-    <Content Include="Resources\Png\arrow.base.png" />
-    <Content Include="Resources\Png\arrow.derived.png" />
-    <Content Include="Resources\Png\assebmly.png" />
-    <Content Include="Resources\Png\back.png" />
-    <Content Include="Resources\Png\bookmark.add.png" />
-    <Content Include="Resources\Png\bookmark.remove.png" />
-    <Content Include="Resources\Png\bookmarks.png" />
-    <Content Include="Resources\Png\close.png" />
-    <Content Include="Resources\Png\copy.png" />
-    <Content Include="Resources\Png\decompile.png" />
-    <Content Include="Resources\Png\dummy.png" />
-    <Content Include="Resources\Png\error.png" />
-    <Content Include="Resources\Png\export.png" />
-    <Content Include="Resources\Png\forward.png" />
-    <Content Include="Resources\Png\help.png" />
-    <Content Include="Resources\Png\image.png" />
-    <Content Include="Resources\Png\image.private.png" />
-    <Content Include="Resources\Png\open.gac.png" />
-    <Content Include="Resources\Png\open.png" />
-    <Content Include="Resources\Png\preferences.png" />
-    <Content Include="Resources\Png\print.png" />
-    <Content Include="Resources\Png\refresh.png" />
-    <Content Include="Resources\Png\resource.png" />
-    <Content Include="Resources\Png\resource.private.png" />
-    <Content Include="Resources\Png\save.png" />
-    <Content Include="Resources\Png\search.png" />
-    <Content Include="Resources\Png\text.png" />
-    <Content Include="Resources\Scripts\jquery.min.js" />
-    <Content Include="Resources\Scripts\shBrushCSharp.js" />
-    <Content Include="Resources\Scripts\shBrushVb.js" />
-    <Content Include="Resources\Scripts\shCore.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

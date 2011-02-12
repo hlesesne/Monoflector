@@ -15,7 +15,7 @@ namespace Monoflector.Windows.Controls.Nodes {
 			if (!field.IsPublic) {
 				this.ForeColor = SystemColors.GrayText;
 			}
-
+			
 			this.ImageIndex = AssemblyTreeNode.GetIcon(field, typeof(Resources.Bitmaps.Field));
 			this.Text = String.Concat(field.Name, " : ", field.FieldType.Name);
 

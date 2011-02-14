@@ -79,6 +79,24 @@ namespace Monoflector.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The given context is not supported..
+        /// </summary>
+        internal static string ContextNotSupported {
+            get {
+                return ResourceManager.GetString("ContextNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The specified type of object ({0}) can not be written by a language writer..
+        /// </summary>
+        internal static string ILanguageWriter_Extensions_TypeNotSupported {
+            get {
+                return ResourceManager.GetString("ILanguageWriter_Extensions_TypeNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to languageWriterCreator returned a null value..
         /// </summary>
         internal static string LanguageWriterCreator_NullValue {
@@ -129,15 +147,6 @@ namespace Monoflector.Properties {
         internal static string ProcessorArchitecture_X86 {
             get {
                 return ResourceManager.GetString("ProcessorArchitecture_X86", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The given context is not supported..
-        /// </summary>
-        internal static string ContextNotSupported {
-            get {
-                return ResourceManager.GetString("ContextNotSupported", resourceCulture);
             }
         }
     }

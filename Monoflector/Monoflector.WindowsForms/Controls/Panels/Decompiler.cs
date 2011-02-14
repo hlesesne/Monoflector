@@ -98,7 +98,7 @@ namespace Monoflector.WindowsForms.Controls.Panels {
 			var target = ApplicationContext.Instance.SelectedLanguage.CreateDecompilationTarget();
 				
 			try {
-				((ILanguageWriter)target).Write(definition);
+                target.WriteDefinition(definition);
 			}
 			catch {
 			}

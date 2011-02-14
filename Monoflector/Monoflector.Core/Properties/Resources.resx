@@ -148,4 +148,7 @@
     <value>The given context is not supported.</value>
     <comment>ContextNotSupported description</comment>
   </data>
+  <data name="ILanguageWriter_Extensions_TypeNotSupported" xml:space="preserve">
+    <value>The specified type of object ({0}) can not be written by a language writer.</value>
+  </data>
 </root>

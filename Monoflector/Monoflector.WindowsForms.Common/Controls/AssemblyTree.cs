@@ -69,7 +69,7 @@ namespace Monoflector.WindowsForms.Controls {
 
 			// don't execute this while we're expanding/contracting;
 
-			if (e.Node.Nodes.Count == 0 && DefinitionDoubleClicked != null) {
+			if (DefinitionDoubleClicked != null) {
 				var node = e.Node as AssemblyTreeNode;
 				DefinitionDoubleClicked(node.Reference);
 			}

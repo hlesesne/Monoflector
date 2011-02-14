@@ -55,6 +55,7 @@
     <Compile Include="CompositionServices.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="ExtensionMethods.Enums.cs" />
+    <Compile Include="ExtensionMethods.ILanguageWriter.cs" />
     <Compile Include="ExtensionMethods.XLinq.cs" />
     <Compile Include="IAssemblyProvider.cs" />
     <Compile Include="ILightAssembly.cs" />

@@ -30,6 +30,18 @@ namespace Monoflector.Languages
             private set;
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether to include member dissasemblies.
+        /// </summary>
+        /// <value>
+        /// 	<see langword="true"/> if member dissasemblies should be included; otherwise, <see langword="false"/>.
+        /// </value>
+        public bool IncludeMemberDissasembly
+        {
+            get;
+            set;
+        }
+
         private StringWriter _stringWriter;
         private Func<IFormatter, ILanguageWriter> _languageWriterCreator;
 
@@ -102,7 +114,103 @@ namespace Monoflector.Languages
             {
                 _chain.CompleteDecompile(method, this);
             }
-        } 
+        }
+
+        void ILanguageWriter.Write(AssemblyDefinition assembly)
+        {
+            try
+            {
+                LanguageWriter.Write(assembly);
+            }
+            catch
+            {
+                return;
+            }
+            if (_chain != null)
+            {
+                _chain.CompleteDecompile(assembly, this);
+            }
+        }
+
+        void ILanguageWriter.Write(EventDefinition @event)
+        {
+            try
+            {
+                LanguageWriter.Write(@event);
+            }
+            catch
+            {
+                return;
+            }
+            if (_chain != null)
+            {
+                _chain.CompleteDecompile(@event, this);
+            }
+        }
+
+        void ILanguageWriter.Write(FieldDefinition field)
+        {
+            try
+            {
+                LanguageWriter.Write(field);
+            }
+            catch
+            {
+                return;
+            }
+            if (_chain != null)
+            {
+                _chain.CompleteDecompile(field, this);
+            }
+        }
+
+        void ILanguageWriter.Write(ModuleDefinition module)
+        {
+            try
+            {
+                LanguageWriter.Write(module);
+            }
+            catch
+            {
+                return;
+            }
+            if (_chain != null)
+            {
+                _chain.CompleteDecompile(module, this);
+            }
+        }
+
+        void ILanguageWriter.Write(PropertyDefinition property)
+        {
+            try
+            {
+                LanguageWriter.Write(property);
+            }
+            catch
+            {
+                return;
+            }
+            if (_chain != null)
+            {
+                _chain.CompleteDecompile(property, this);
+            }
+        }
+
+        void ILanguageWriter.Write(TypeDefinition type)
+        {
+            try
+            {
+                LanguageWriter.Write(type);
+            }
+            catch
+            {
+                return;
+            }
+            if (_chain != null)
+            {
+                _chain.CompleteDecompile(type, this);
+            }
+        }
         #endregion
 
         /// <summary>

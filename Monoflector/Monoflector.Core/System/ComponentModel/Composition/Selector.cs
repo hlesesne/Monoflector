@@ -9,12 +9,11 @@ namespace System.ComponentModel.Composition
     /// Represens a selector.
     /// </summary>
     /// <typeparam name="TImport">The type of the import.</typeparam>
-    public abstract class Selector<TImport>
+    public abstract class Selector<TImport> : IDisposable
     {
         /// <summary>
         /// Gets the options.
         /// </summary>
-        [Import(typeof(TImport))]
         public IEnumerable<TImport> Options
         {
             get;
@@ -53,6 +52,7 @@ namespace System.ComponentModel.Composition
         public Selector()
         {
             Monoflector.CompositionServices.ComposeParts(this);
+            SelectedValue = Options.FirstOrDefault();
         }
 
         void IDisposable.Dispose()

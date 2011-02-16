@@ -15,7 +15,7 @@
     <files:copy Filename="Monoflector.Windows.dll" />
     <files:copy Filename="Monoflector.Windows.pdb" />
 
-    <mef:activate Filename="Monoflector.Windows.dll" Context="Normal" />
+    <mef:activate Path="Monoflector.Windows.dll" Context="Normal" />
 
   </Deployment>
 

@@ -58,7 +58,7 @@ namespace System.ComponentModel.Composition.Configuration
         /// The export providers.
         /// </value>
         [XmlElement("Export", Namespace = PluginConfiguration.Xmlns)]
-        public List<string> ExportProviders
+        public List<ExportProvider> ExportProviders
         {
             get;
             set;
@@ -69,7 +69,7 @@ namespace System.ComponentModel.Composition.Configuration
         /// </summary>
         public PluginExportConfiguration()
         {
-            ExportProviders = new List<string>();
+            ExportProviders = new List<ExportProvider>();
         }
     }
 }

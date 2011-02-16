@@ -15,7 +15,7 @@
     <files:copy Filename="Monoflector.CSharp.dll" />
     <files:copy Filename="Monoflector.CSharp.pdb" />
 
-    <mef:activate Filename="Monoflector.CSharp.dll" Context="Normal" />
+    <mef:activate Path="Monoflector.CSharp.dll" Context="Normal" />
 
   </Deployment>
 

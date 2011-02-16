@@ -15,8 +15,8 @@
     <files:copy Filename="Monoflector.WindowsForms.dll" />
     <files:copy Filename="Monoflector.WindowsForms.pdb" />
 
-    <mef:activate Filename="Monoflector.WindowsForms.dll" Context="Normal" />
-    <mef:activate Filename="Monoflector.WindowsForms.dll" Context="Installation" />
+    <mef:activate Path="Monoflector.WindowsForms.dll" Context="Normal" />
+    <mef:activate Path="Monoflector.WindowsForms.dll" Context="Installation" />
 
   </Deployment>
 

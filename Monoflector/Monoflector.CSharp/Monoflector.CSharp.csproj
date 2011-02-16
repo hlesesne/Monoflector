@@ -76,7 +76,7 @@
   <PropertyGroup>
     <PostBuildEvent>mkdir "..\..\..\..\bin\Debug\Bootstrap"
 copy "$(TargetDir)*.*" "..\..\..\..\bin\Debug\Bootstrap" /y
-"$(SolutionDir)\..\Util\MakePlugin" "$(TargetDir)\" "..\..\..\..\bin\Debug\Bootstrap\Monoflector.org.Windows.Core.mfplug"</PostBuildEvent>
+"$(SolutionDir)\..\Util\MakePlugin" "$(TargetDir)\" "$(SolutionDir)\..\bin\Debug\Bootstrap\Languages.Monoflector.CSharp.mfplug"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

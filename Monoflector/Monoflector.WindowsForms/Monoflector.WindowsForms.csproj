@@ -444,7 +444,7 @@
     <Content Include="Resources\Bitmaps\VSObject_ValueType_Friend.bmp" />
     <Content Include="Resources\Bitmaps\VSObject_ValueType_Protected.bmp" />
     <Content Include="Resources\Bitmaps\VSObject_ValueType_Sealed.bmp" />
-    <Content Include="Resources\Css\shCoreDefault.css" />
+    <Content Include="Resources\Css\pygments.css" />
     <Content Include="Resources\Monoflector.Logo.png" />
     <Content Include="Resources\page.html" />
     <Content Include="Resources\Png\analyze.png" />
@@ -479,8 +479,6 @@
     <Content Include="Resources\Scripts\shBrushCSharp.js" />
     <Content Include="Resources\Scripts\shBrushVb.js" />
     <Content Include="Resources\Scripts\shCore.js" />
-    <None Include="Resources\shCore.css" />
-    <None Include="Resources\shCoreDefault.css" />
     <None Include="Resources\wrench.png" />
     <None Include="Resources\stop.png" />
     <None Include="Resources\package_add.png" />
@@ -493,9 +491,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "..\..\..\..\bin\Debug\Bootstrap"
-copy "$(TargetDir)*.*" "..\..\..\..\bin\Debug\Bootstrap" /y
-"$(SolutionDir)\..\Util\MakePlugin" "$(TargetDir)\" "..\..\..\..\bin\Debug\Bootstrap\Monoflector.org.Windows.Core.mfplug"</PostBuildEvent>
+    <PostBuildEvent>mkdir "$(SolutionDir)\..\bin\Debug\Bootstrap"
+copy "$(TargetDir)*.*" "$(SolutionDir)\..\bin\Debug\Bootstrap" /y
+"$(SolutionDir)\..\Util\MakePlugin" "$(TargetDir)\" "$(SolutionDir)\..\bin\Debug\Bootstrap\System.Monoflector.WindowsForms.mfplug"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

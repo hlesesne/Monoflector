@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._okButton = new System.Windows.Forms.Button();
             this._cancelButton = new System.Windows.Forms.Button();
+            this._portableModeCheckbox = new System.Windows.Forms.CheckBox();
+            this._toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +65,7 @@
             this._okButton.TabIndex = 2;
             this._okButton.Text = "&OK";
             this._okButton.UseVisualStyleBackColor = true;
+            this._okButton.Click += new System.EventHandler(this._okButton_Click);
             // 
             // _cancelButton
             // 
@@ -73,6 +77,16 @@
             this._cancelButton.Text = "Not Now";
             this._cancelButton.UseVisualStyleBackColor = true;
             // 
+            // _portableModeCheckbox
+            // 
+            this._portableModeCheckbox.AutoSize = true;
+            this._portableModeCheckbox.Location = new System.Drawing.Point(21, 89);
+            this._portableModeCheckbox.Name = "_portableModeCheckbox";
+            this._portableModeCheckbox.Size = new System.Drawing.Size(155, 17);
+            this._portableModeCheckbox.TabIndex = 4;
+            this._portableModeCheckbox.Text = "Portable (thumbdrive) mode";
+            this._portableModeCheckbox.UseVisualStyleBackColor = true;
+            // 
             // BootstrapConfirmation
             // 
             this.AcceptButton = this._okButton;
@@ -80,6 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._cancelButton;
             this.ClientSize = new System.Drawing.Size(423, 120);
+            this.Controls.Add(this._portableModeCheckbox);
             this.Controls.Add(this._cancelButton);
             this.Controls.Add(this._okButton);
             this.Controls.Add(this.label2);
@@ -101,5 +116,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button _okButton;
         private System.Windows.Forms.Button _cancelButton;
+        private System.Windows.Forms.CheckBox _portableModeCheckbox;
+        private System.Windows.Forms.ToolTip _toolTip;
     }
 }

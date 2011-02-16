@@ -93,6 +93,8 @@
     </Compile>
     <Compile Include="Runtime\IMonoflectorHost.cs" />
     <Compile Include="System\ComponentModel\Composition\Configuration\ExportContextConfiguration.cs" />
+    <Compile Include="System\ComponentModel\Composition\Configuration\ExportProvider.cs" />
+    <Compile Include="System\ComponentModel\Composition\Configuration\ExportType.cs" />
     <Compile Include="System\ComponentModel\Composition\Configuration\PluginExportConfiguration.cs" />
     <Compile Include="System\ComponentModel\Composition\Configuration\PluginConfiguration.cs" />
     <Compile Include="System\ComponentModel\Composition\EnvironmentDependencyAttribute.cs" />
@@ -101,6 +103,8 @@
     <Compile Include="System\ComponentModel\Composition\Hosting\PluginCatalog.cs" />
     <Compile Include="System\ComponentModel\Composition\IEnvironmentMetadata.cs" />
     <Compile Include="System\ComponentModel\Composition\MetadataKeys.cs" />
+    <Compile Include="System\ComponentModel\Composition\SelectionChangedEventArgs.cs" />
+    <Compile Include="System\ComponentModel\Composition\Selector.cs" />
     <Compile Include="ValueEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>

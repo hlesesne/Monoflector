@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml;
 using System.ComponentModel.Composition.Configuration;
+using Monoflector.PluginSystem.Deployment.BuiltIn;
 
 namespace Monoflector.PluginSystem.Deployment
 {
@@ -113,6 +114,12 @@ namespace Monoflector.PluginSystem.Deployment
                         return; // TODO: Log
                     }
                 }
+
+                // Copy the manifest.
+                new InstallFile()
+                {
+                    Filename = "manifest.xml"
+                }.Deploy(this);
 
                 PluginConfiguration.Save();
             }

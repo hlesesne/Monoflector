@@ -47,7 +47,12 @@ namespace Monoflector.Languages
             _code = XmlWriter.Create(_codeStringWriter, settings);
 
             _gutter.WriteStartElement("td");
+            _gutter.WriteAttributeString("valign", "top");
+            _gutter.WriteAttributeString("class", "hll");
+
             _code.WriteStartElement("td");
+            _code.WriteAttributeString("width", "100%");
+            _code.WriteAttributeString("valign", "top");
 
             _firstLine = true;
             WriteLine();

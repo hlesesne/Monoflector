@@ -34,13 +34,26 @@ namespace Monoflector.PluginSystem.Deployment.BuiltIn
         }
 
         /// <summary>
-        /// Gets or sets the filename.
+        /// Gets or sets the path.
         /// </summary>
         /// <value>
-        /// The filename.
+        /// The path.
         /// </value>
-        [XmlAttribute("Filename")]
-        public string Filename
+        [XmlAttribute("Path")]
+        public string Path
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the type of the export.
+        /// </summary>
+        /// <value>
+        /// The type of the export.
+        /// </value>
+        [XmlAttribute("ExportType")]
+        public ExportType ExportType
         {
             get;
             set;
@@ -59,8 +72,10 @@ namespace Monoflector.PluginSystem.Deployment.BuiltIn
             if (item == null)
                 ctx.PluginExports.Add(item = new PluginExportConfiguration() { PluginIdentity = id, PluginCategory = cat });
             item.IsActive = true;
-            if (!item.ExportProviders.Contains(Filename))
-                item.ExportProviders.Add(Filename);
+            foreach (var prov in item.ExportProviders)
+                if (prov.Path == Path)
+                    return;
+            item.ExportProviders.Add(new ExportProvider() { Path = Path, ExportType = ExportType });
         }
     }
 }

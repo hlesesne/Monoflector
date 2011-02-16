@@ -37,6 +37,8 @@ namespace Monoflector
         public static T Localize<T>(this IEnumerable<T> items, CultureInfo cultureInfo)
             where T : LocalizedEntity
         {
+            if (items == null)
+                return default(T);
             T result = null;
             while (result == null && cultureInfo != null)
             {

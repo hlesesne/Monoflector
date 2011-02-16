@@ -199,7 +199,7 @@ namespace Monoflector.WindowsForms.Controls.Panels {
                                   new float[]{0,0,0,0,1,0},
                                   new float[]{0,0,0,0,0,1}});
 
-			using (Bitmap button = Resources.Png.close) {
+			using (Bitmap button = Monoflector.Resources.Png.close) {
 
 				if (_buttonRect == Rectangle.Empty) {
 					int x = rect.Width - _padding - button.Width;

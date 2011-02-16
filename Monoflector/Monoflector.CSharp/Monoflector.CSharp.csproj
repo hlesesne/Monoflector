@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\Portable\Languages\monoflector%40monoflector.org\Monoflector.CSharp\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\Bootstrap\</OutputPath>
+    <OutputPath>..\..\bin\Release\Portable\Languages\monoflector%40monoflector.org\Monoflector.CSharp\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,18 +65,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="InstallDoc\index.htm">
+    <Content Include="Manifest.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Manifest.xml">
+    <Content Include="Readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "%25APPDATA%25\Monoflector\Plugins\plugins.monoflector.org\Languages\CSharp"
-copy "$(TargetDir)*.*" "%25APPDATA%25\Monoflector\Plugins\plugins.monoflector.org\Languages\CSharp"
-"..\..\..\..\Util\MakePlugin" "$(TargetDir)\" "..\..\..\..\bin\Debug\Bootstrap\Monoflector.org.Languages.CSharp.mfplug"</PostBuildEvent>
+    <PostBuildEvent>mkdir "..\..\..\..\bin\Debug\Bootstrap"
+copy "$(TargetDir)*.*" "..\..\..\..\bin\Debug\Bootstrap" /y
+"$(SolutionDir)\..\Util\MakePlugin" "$(TargetDir)\" "..\..\..\..\bin\Debug\Bootstrap\Monoflector.org.Windows.Core.mfplug"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

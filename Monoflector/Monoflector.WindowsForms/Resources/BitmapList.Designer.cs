@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Monoflector.WindowsForms.Resources {
+namespace Monoflector.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Monoflector.WindowsForms.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Monoflector.WindowsForms.Resources.BitmapList", typeof(BitmapList).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Monoflector.Resources.BitmapList", typeof(BitmapList).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -45,6 +45,19 @@ namespace Monoflector.PluginSystem.Definition
         }
 
         /// <summary>
+        /// Gets or sets the plugin category.
+        /// </summary>
+        /// <value>
+        /// The plugin category.
+        /// </value>
+        [XmlAttribute("Category")]
+        public PluginCategory Category
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or sets the title of the plugin.
         /// </summary>
         /// <value>
@@ -84,13 +97,13 @@ namespace Monoflector.PluginSystem.Definition
         }
 
         /// <summary>
-        /// Gets or sets the relative location of the installation documentation.
+        /// Gets or sets the relative location of the readme.
         /// </summary>
         /// <value>
-        /// The relative location of the installation documentation.
+        /// The readme locations.
         /// </value>
-        [XmlElement("InstallDocumentation", Namespace = Xmlns)]
-        public LocalizedElement[] InstallationDocumentation
+        [XmlElement("Readme", Namespace = Xmlns)]
+        public LocalizedElement[] Readme
         {
             get;
             set;

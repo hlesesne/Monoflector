@@ -81,7 +81,7 @@ namespace Monoflector.PluginSystem.Deployment
 
             _zipFile = zipFile;
 
-            PluginsRoot = Paths.Plugins;
+            PluginsRoot = Path.Combine(Paths.Root, pluginDefinition.Category.ToString());
             DestinationPath = Path.Combine(PluginsRoot, PluginDefinition.PluginIdentity.Replace('/', Path.DirectorySeparatorChar));
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using Monoflector.PluginSystem.Definition;
 
 namespace System.ComponentModel.Composition.Configuration
 {
@@ -19,6 +20,19 @@ namespace System.ComponentModel.Composition.Configuration
         /// </value>
         [XmlAttribute("Identity")]
         public string PluginIdentity
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Gets or sets the plugin category.
+        /// </summary>
+        /// <value>
+        /// The plugin category.
+        /// </value>
+        [XmlAttribute("Category")]
+        public PluginCategory PluginCategory
         {
             get;
             set;

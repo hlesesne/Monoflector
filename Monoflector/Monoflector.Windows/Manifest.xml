@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Plugin xmlns="http://schemas.monoflector.org/plugins/2011/definition"
-        Identity="plugins.monoflector.org/Windows/Core"
-        Version="1.0.0.0">
+        Identity="monoflector@monoflector.org/Monoflector.Windows"
+        Version="1.0.0.0"
+        Category="System">
+  
   <Title>Windows Core</Title>
   <Author>Monoflector Project</Author>
   <Description>Required windows functionality.</Description>
-  <InstallDocumentation>InstallDoc</InstallDocumentation>
+  <Readme>Readme.txt</Readme>
 
   <Deployment xmlns:files="http://schemas.monoflector.org/plugins/2011/deployment/files"
               xmlns:mef="http://schemas.monoflector.org/plugins/2011/deployment/mef">

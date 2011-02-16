@@ -53,10 +53,11 @@ namespace Monoflector.PluginSystem.Deployment.BuiltIn
         public void Deploy(DeploymentContext context)
         {
             var id = context.PluginDefinition.PluginIdentity;
+            var cat = context.PluginDefinition.Category;
             var ctx = context.PluginConfiguration.GetContext(ExportContext);
-            var item = ctx.PluginExports.Where(x => string.Compare(id, x.PluginIdentity) == 0).FirstOrDefault();
+            var item = ctx.PluginExports.Where(x => string.Compare(id, x.PluginIdentity) == 0 && x.PluginCategory == cat).FirstOrDefault();
             if (item == null)
-                ctx.PluginExports.Add(item = new PluginExportConfiguration() { PluginIdentity = id });
+                ctx.PluginExports.Add(item = new PluginExportConfiguration() { PluginIdentity = id, PluginCategory = cat });
             item.IsActive = true;
             if (!item.ExportProviders.Contains(Filename))
                 item.ExportProviders.Add(Filename);

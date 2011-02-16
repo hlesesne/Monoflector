@@ -75,6 +75,7 @@
     <Compile Include="PluginSystem\Definition\LocalizedElement.cs" />
     <Compile Include="PluginSystem\Definition\LocalizedEntity.cs" />
     <Compile Include="PluginSystem\Definition\PluginDefinition.cs" />
+    <Compile Include="PluginSystem\Definition\PluginCategory.cs" />
     <Compile Include="PluginSystem\Deployment\BuiltIn\ActivateExportProvider.cs" />
     <Compile Include="PluginSystem\Deployment\BuiltIn\InstallFile.cs" />
     <Compile Include="PluginSystem\Deployment\DeploymentActionExportAttribute.cs" />

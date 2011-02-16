@@ -41,7 +41,7 @@ namespace Monoflector.WindowsForms.Controls {
 		}
 
 		private void InitImages() {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monoflector.WindowsForms.Resources.BitmapList));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monoflector.Resources.BitmapList));
 
 			this._List.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageStream")));
 			this._List.Images.SetKeyName(0, "VSObject_Assembly.bmp");

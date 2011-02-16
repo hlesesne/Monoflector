@@ -73,18 +73,18 @@ namespace Monoflector.Bootstrap
 
         private void _pluginsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _webBrowser.Navigate("about:blank");
+            _eulaTextBox.Text = string.Empty;
             if(_pluginsListView.SelectedItems.Count == 0)
             {
                 return;
             }
             var item = _pluginsListView.SelectedItems[0];
             var plug = item.Tag as DeploymentContext;
-            var path = (string)plug.PluginDefinition.InstallationDocumentation.Localize();
+            var path = (string)plug.PluginDefinition.Readme.Localize();
             if (!string.IsNullOrEmpty(path))
             {
-                path = plug.ExtractDirectory(path);
-                _webBrowser.Navigate(Path.Combine(path, "index.htm"));
+                path = plug.ExtractFile(path);
+                _eulaTextBox.Text = File.ReadAllText(path);
             }
         }
     }

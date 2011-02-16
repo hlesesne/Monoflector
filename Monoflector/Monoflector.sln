@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoflector", "Monoflector\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakePlugin", "MakePlugin\MakePlugin.csproj", "{059DF049-B9D2-4A19-87DD-9B4D6A60E938}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monoflector.WindowsForms.Common", "Monoflector.WindowsForms.Common\Monoflector.WindowsForms.Common.csproj", "{DE76BF7D-9A0E-4624-B16D-8093C0F0C967}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cecil.Decompiler", "..\External\Cecil\decompiler\Cecil.Decompiler\Cecil.Decompiler.csproj", "{ED1BE103-1699-4116-A732-616BEB142EB2}"
 EndProject
 Global

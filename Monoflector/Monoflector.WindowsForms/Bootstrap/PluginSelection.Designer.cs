@@ -33,12 +33,12 @@
             this._installButton = new System.Windows.Forms.Button();
             this._cancelButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this._webBrowser = new System.Windows.Forms.WebBrowser();
             this._installationPanel = new System.Windows.Forms.Panel();
             this._pluginLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this._progressBar = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
+            this._eulaTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this._installationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -96,20 +96,11 @@
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this._webBrowser);
+            this.panel1.Controls.Add(this._eulaTextBox);
             this.panel1.Location = new System.Drawing.Point(165, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 254);
             this.panel1.TabIndex = 4;
-            // 
-            // _webBrowser
-            // 
-            this._webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._webBrowser.Location = new System.Drawing.Point(0, 0);
-            this._webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this._webBrowser.Name = "_webBrowser";
-            this._webBrowser.Size = new System.Drawing.Size(269, 252);
-            this._webBrowser.TabIndex = 0;
             // 
             // _installationPanel
             // 
@@ -160,6 +151,18 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Installing...";
             // 
+            // _eulaTextBox
+            // 
+            this._eulaTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this._eulaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._eulaTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._eulaTextBox.Location = new System.Drawing.Point(0, 0);
+            this._eulaTextBox.Multiline = true;
+            this._eulaTextBox.Name = "_eulaTextBox";
+            this._eulaTextBox.ReadOnly = true;
+            this._eulaTextBox.Size = new System.Drawing.Size(269, 252);
+            this._eulaTextBox.TabIndex = 0;
+            // 
             // PluginSelection
             // 
             this.AcceptButton = this._installButton;
@@ -179,6 +182,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plugin Installation";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this._installationPanel.ResumeLayout(false);
             this._installationPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -193,11 +197,11 @@
         private System.Windows.Forms.Button _installButton;
         private System.Windows.Forms.Button _cancelButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.WebBrowser _webBrowser;
         private System.Windows.Forms.Panel _installationPanel;
         private System.Windows.Forms.Label _pluginLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar _progressBar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox _eulaTextBox;
     }
 }

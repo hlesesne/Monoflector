@@ -72,7 +72,7 @@ namespace System.ComponentModel.Composition.Configuration
         /// <returns>The plugin configuration.</returns>
         public static PluginConfiguration Load()
         {
-            var path = Path.Combine(Paths.Plugins, "plugins.xml");
+            var path = Path.Combine(Paths.Root, "plugins.xml");
             if (!File.Exists(path))
                 return null;
             using (var reader = XmlReader.Create(path))
@@ -86,7 +86,7 @@ namespace System.ComponentModel.Composition.Configuration
         /// </summary>
         public void Save()
         {
-            var path = Path.Combine(Paths.Plugins, "plugins.xml");
+            var path = Path.Combine(Paths.Root, "plugins.xml");
             if (File.Exists(path))
                 File.Delete(path);
             using (var writer = XmlWriter.Create(path))

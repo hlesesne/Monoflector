@@ -38,7 +38,7 @@ namespace System.ComponentModel.Composition.Hosting
             {
                 if(pluginExport.IsActive)
                 {
-                    var path = Path.Combine(Paths.Plugins, pluginExport.PluginIdentity.Replace('/', Path.DirectorySeparatorChar));
+                    var path = Path.Combine(Paths.Root, pluginExport.PluginCategory.ToString(), pluginExport.PluginIdentity.Replace('/', Path.DirectorySeparatorChar));
                     foreach (var assemExport in pluginExport.ExportProviders)
                     {
                         var path2 = Path.Combine(path, assemExport);
